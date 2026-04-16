@@ -13,7 +13,8 @@
       background: rgba(15,32,53,0.95); border-bottom: 1px solid rgba(212,175,55,0.15);
       padding: 1rem 5%; display: flex; align-items: center; justify-content: space-between;
     }
-    .logo { font-size: 1.3rem; font-weight: 800; color: #D4AF37; text-decoration: none; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo img { height: 34px; width: auto; }
     .back { color: #A0AEC0; font-size: 0.85rem; text-decoration: none; }
     .back:hover { color: #fff; }
     .content { max-width: 800px; margin: 3rem auto; padding: 0 5% 5rem; }
@@ -27,7 +28,7 @@
 </head>
 <body>
 <nav>
-  <a href="/" class="logo">말밥</a>
+  <a href="/" class="logo"><img src="/logo.svg" alt="말밥" /></a>
   <a href="/" class="back">← 홈으로</a>
 </nav>
 <div class="content">

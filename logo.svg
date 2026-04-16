@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70" role="img" aria-label="말밥 로고">
+  <title>말밥</title>
+  <defs>
+    <radialGradient id="badgeGrad" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#EDD045"/>
+      <stop offset="100%" stop-color="#B8921A"/>
+    </radialGradient>
+    <radialGradient id="glowRing" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#EDD04530"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Outer glow ring -->
+  <circle cx="35" cy="35" r="35" fill="url(#glowRing)"/>
+
+  <!-- Main badge circle -->
+  <circle cx="35" cy="35" r="32" fill="url(#badgeGrad)"/>
+
+  <!-- Inner border ring -->
+  <circle cx="35" cy="35" r="29" fill="none" stroke="#0F2035" stroke-width="0.6" opacity="0.25"/>
+
+  <!-- ── Horse head silhouette (facing right, centered at 35,35) ── -->
+  <g transform="translate(35,35)">
+
+    <!-- Main head + neck shape -->
+    <path fill="#0F2035" d="
+      M -14,22
+      C -20,16 -24,8 -22,1
+      C -20,-6 -18,-12 -16,-17
+      C -14,-21 -11,-24 -8,-25
+      L -4,-23
+      L -1,-28
+      L 2,-22
+      C 6,-22 10,-19 12,-15
+      C 14,-11 14,-5 12,1
+      C 10,5 8,9 7,12
+      C 6,15 6,18 5,21
+      L -7,22 Z
+    "/>
+
+    <!-- Mane detail (subtle lighter stroke along the crest) -->
+    <path fill="none" stroke="#C4980D" stroke-width="1.2" stroke-linecap="round" opacity="0.45"
+      d="M -8,-25 C -12,-20 -16,-12 -16,-4 C -16,2 -14,8 -14,14"/>
+
+    <!-- Eye -->
+    <circle cx="8" cy="-13" r="2.8" fill="#EDD045"/>
+    <circle cx="9" cy="-14" r="1" fill="#FFF8DC" opacity="0.6"/>
+
+    <!-- Nostril -->
+    <ellipse cx="12" cy="3" rx="1.4" ry="1.8" fill="#8B6914" opacity="0.65" transform="rotate(-15,12,3)"/>
+
+  </g>
+
+  <!-- Outer ring accent -->
+  <circle cx="35" cy="35" r="32" fill="none" stroke="#C4980D" stroke-width="1.5"/>
+
+  <!-- Vertical separator -->
+  <line x1="78" y1="17" x2="78" y2="53" stroke="#D4AF37" stroke-width="1.2" opacity="0.3" stroke-linecap="round"/>
+
+  <!-- ── Brand name 말밥 ── -->
+  <text x="90" y="40"
+    font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo','NanumGothicBold',sans-serif"
+    font-size="27" font-weight="800" fill="#D4AF37"
+    dominant-baseline="middle">말밥</text>
+
+  <!-- ── Subtitle MALBAB ── -->
+  <text x="91" y="56"
+    font-family="'Helvetica Neue','Arial',sans-serif"
+    font-size="9.5" font-weight="300" fill="#6B8099" letter-spacing="5.5">MALBAB</text>
+
+  <!-- Tiny dot accent under subtitle -->
+  <circle cx="181" cy="58" r="1.2" fill="#D4AF37" opacity="0.4"/>
+</svg>
