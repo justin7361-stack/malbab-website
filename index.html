@@ -57,9 +57,17 @@
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh; display: flex; align-items: center; justify-content: center;
-      text-align: center; padding: 80px 6% 4rem;
-      background: radial-gradient(ellipse at 50% 65%, rgba(42,90,140,0.4) 0%, transparent 65%);
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 50%, var(--navy) 100%);
+      padding: 120px 6% 80px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(79,70,229,0.12) 0%, transparent 70%);
+      border-radius: 50%; pointer-events: none;
     }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -72,7 +80,7 @@
       line-height: 1.2; letter-spacing: -1.5px; margin-bottom: 1.4rem;
       word-break: keep-all;
     }
-    .hero h1 strong { color: var(--gold); }
+    .hero h1 em { color: var(--indigo-light); font-style: normal; }
     .hero-sub {
       font-size: clamp(0.95rem, 2.2vw, 1.1rem); color: var(--slate-light);
       max-width: 580px; margin: 0 auto 0.8rem; line-height: 1.8;
@@ -311,6 +319,16 @@
       .how-section { padding: 2rem 1.5rem; }
       .score-grid { grid-template-columns: 1fr; }
     }
+    /* HERO STATS */
+    .hero-stats {
+      display: flex; justify-content: center; gap: 3rem;
+      padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 2rem;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-num { font-size: 1.6rem; font-weight: 900; color: #fff; }
+    .hero-stat-unit { font-size: 0.85rem; color: var(--gold); margin-left: 2px; }
+    .hero-stat-lbl { font-size: 0.72rem; color: var(--slate); margin-top: 4px; }
   </style>
 </head>
 <body>
@@ -335,31 +353,30 @@
 
 <!-- ─── HERO ─── -->
 <section class="hero">
-  <div>
-    <div style="font-size:5.5rem; margin-bottom:1.2rem; line-height:1; filter: drop-shadow(0 6px 24px rgba(212,175,55,0.35));">🏇</div>
-    <div class="hero-eyebrow">✨ 한국 최초 AI 경마 분석 플랫폼</div>
-    <h1>남녀노소 모두가 즐기는 <strong>새로운 경마 문화</strong></h1>
+  <div class="section-wrap" style="max-width:720px;">
+    <div class="hero-eyebrow">🏇 한국 독자 속도 지수 KSF · AI 앙상블 분석</div>
+    <h1>경마 분석,<br>이제 <em>과학이 됩니다</em></h1>
     <p class="hero-sub">
-      <span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span>는 KRA 공식 API로 다차원적 AI 분석을 제공합니다.
+      KRA 74,000건 데이터 기반의 독자 속도 지수 <strong style="color:#C7D2FE;">KSF</strong>와<br>
+      AI 앙상블 모델로 경마를 수치화합니다.
     </p>
-    <p class="hero-sub" style="margin-top:0.4rem; font-size:clamp(0.9rem,1.9vw,1.05rem);">
-      적중률을 높이는 당신의 스마트한 선택 — <span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span>, 지금 시작하세요!
-    </p>
-    <div class="hero-btns">
-      <span class="btn-gold">지금 시작하기 <small style="font-size:0.7rem; opacity:0.7;">(서비스 준비 중)</small></span>
-      <a href="#features" class="btn-outline">서비스 알아보기</a>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">74<span class="hero-stat-unit">K+</span></div>
+        <div class="hero-stat-lbl">경주 데이터</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">KSF</div>
+        <div class="hero-stat-lbl">독자 속도 지수</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">AI</div>
+        <div class="hero-stat-lbl">앙상블 분석</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ─── STATS ─── -->
-<div class="statsbar">
-  <div class="stat"><div class="stat-n">55%+</div><div class="stat-l">Top-3 예측 적중률</div></div>
-  <div class="stat"><div class="stat-n">60,000+</div><div class="stat-l">AI 학습 경주 데이터</div></div>
-  <div class="stat"><div class="stat-n">10가지</div><div class="stat-l">과학적 분석 지표</div></div>
-  <div class="stat"><div class="stat-n">3곳</div><div class="stat-l">서울·부산경남·제주 전 경마장</div></div>
-  <div class="stat"><div class="stat-n">실시간</div><div class="stat-l">경주일 데이터 자동 갱신</div></div>
-</div>
 
 <!-- ─── 1. WHY 말밥 ─── -->
 <div id="why">
