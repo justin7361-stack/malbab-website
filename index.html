@@ -49,9 +49,9 @@
     .nav-links a { color: var(--slate-light); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; font-weight: 500; }
     .nav-links a:hover { color: var(--white); }
     .nav-cta {
-      background: rgba(160,174,192,0.25); color: var(--slate-light); font-weight: 700;
-      padding: 0.45rem 1.3rem; border-radius: 8px; text-decoration: none; font-size: 0.85rem;
-      cursor: not-allowed; pointer-events: none;
+      background: var(--gold); color: var(--navy);
+      font-weight: 800; padding: 0.45rem 1.3rem;
+      border-radius: 8px; text-decoration: none; font-size: 0.85rem;
     }
     .nav-ham { display: none; background: none; border: none; color: var(--slate-light); font-size: 1.4rem; cursor: pointer; }
 
@@ -132,142 +132,32 @@
     .section-title strong { color: var(--gold); }
     .section-desc { color: var(--slate-light); max-width: 540px; font-size: 0.95rem; }
 
-    /* ── 1. WHY 말밥 ── */
-    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
-    .why-card {
-      background: var(--navy2); border: 1px solid rgba(42,90,140,0.4);
-      border-radius: 18px; padding: 2rem;
-    }
-    .why-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--gold); }
-    .why-card p { font-size: 0.875rem; color: var(--slate-light); line-height: 1.8; }
-    .why-highlight {
-      background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(42,90,140,0.2) 100%);
-      border: 1px solid rgba(212,175,55,0.2); border-radius: 18px;
-      padding: 2.5rem; margin-top: 2rem; grid-column: 1 / -1; text-align: center;
-    }
-    .why-highlight p { color: var(--border); font-size: 1rem; line-height: 1.9; max-width: 700px; margin: 0 auto; }
-    .why-highlight strong { color: var(--gold); }
-
     /* ── 2. FEATURES ── */
     .feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
     .feat-card {
-      background: var(--navy2); border: 1px solid rgba(42,90,140,0.4);
+      background: #F8FAFC; border: 1px solid var(--border);
       border-radius: 16px; padding: 1.8rem;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .feat-card:hover { border-color: rgba(212,175,55,0.35); transform: translateY(-3px); }
+    .feat-card:hover { border-color: var(--indigo-light); transform: translateY(-3px); }
     .feat-icon { font-size: 1.8rem; margin-bottom: 0.9rem; }
-    .feat-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .feat-card p { font-size: 0.85rem; color: var(--slate-light); line-height: 1.75; }
+    .feat-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: #0F172A; }
+    .feat-card p { font-size: 0.85rem; color: var(--slate); line-height: 1.75; }
 
     /* ── 3. HOW IT WORKS ── */
-    .how-section { background: var(--navy2); border-radius: 24px; padding: 3rem; margin-top: 0; }
+    .how-section { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 24px; padding: 3rem; margin-top: 0; }
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin-top: 2.5rem; position: relative; }
     .step { text-align: center; }
     .step-num {
       width: 52px; height: 52px; border-radius: 50%;
-      background: var(--gold); color: var(--navy); font-weight: 900; font-size: 1.1rem;
+      background: var(--indigo); color: #fff; font-weight: 900; font-size: 1.1rem;
       display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;
-      border: 2px solid rgba(255,255,255,0.2);
+      border: 2px solid rgba(79,70,229,0.2);
     }
-    .gate-1 { background: #FFFFFF; color: #0F2035; }
-    .gate-2 { background: #D4AF37; color: #0F2035; }
-    .gate-3 { background: #C0392B; color: #FFFFFF; }
-    .gate-4 { background: #111111; color: #D4AF37; border-color: #333; }
-    .step h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
-    .step p { font-size: 0.82rem; color: var(--slate-light); line-height: 1.7; }
+    .step h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; color: #0F172A; }
+    .step p { font-size: 0.82rem; color: var(--slate); line-height: 1.7; }
 
-    /* ── 4. AI 알고리즘 ── */
-    .ai-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-top: 3rem; }
-    .ai-text p { color: var(--slate-light); font-size: 0.9rem; line-height: 1.85; margin-bottom: 1rem; }
-    .ai-text strong { color: var(--border); }
-    .score-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-    .score-item {
-      background: var(--navy2); border: 1px solid rgba(42,90,140,0.4);
-      border-radius: 12px; padding: 0.9rem 1rem;
-    }
-    .score-item .name { font-size: 0.8rem; font-weight: 700; color: var(--border); margin-bottom: 3px; }
-    .score-item .desc { font-size: 0.72rem; color: var(--slate-light); }
-    .score-bar-wrap { height: 4px; background: rgba(42,90,140,0.4); border-radius: 2px; margin-top: 6px; }
-    .score-bar { height: 4px; background: var(--gold); border-radius: 2px; }
-    .ai-disclaimer {
-      background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.15);
-      border-radius: 12px; padding: 1rem 1.2rem; margin-top: 2rem;
-      font-size: 0.8rem; color: var(--slate-light); line-height: 1.7;
-    }
-
-    /* ── 5. PRICING ── */
-    .pricing-wrap { background: rgba(27,58,92,0.2); }
-    .free-paid-compare {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem;
-    }
-    .compare-col {
-      background: var(--navy2); border: 1px solid rgba(42,90,140,0.4);
-      border-radius: 20px; padding: 2rem; overflow: hidden;
-    }
-    .compare-col.paid { border-color: var(--gold); }
-    .compare-header {
-      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;
-      padding-bottom: 1.2rem; border-bottom: 1px solid rgba(42,90,140,0.3);
-    }
-    .compare-col.paid .compare-header { border-color: rgba(212,175,55,0.2); }
-    .compare-badge {
-      font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem;
-      border-radius: 6px; background: rgba(42,90,140,0.5); color: var(--slate-light);
-    }
-    .compare-col.paid .compare-badge { background: var(--gold); color: var(--navy); }
-    .compare-header h3 { font-size: 1rem; font-weight: 700; }
-    .compare-list { list-style: none; }
-    .compare-list li {
-      font-size: 0.85rem; color: var(--slate-light); padding: 0.45rem 0;
-      border-bottom: 1px solid rgba(42,90,140,0.2);
-      display: flex; align-items: center; gap: 0.5rem;
-    }
-    .compare-list li.has { color: var(--border); }
-    .compare-list li.has::before { content: '✓'; color: var(--gold); font-weight: 700; }
-    .compare-list li.no::before { content: '–'; color: var(--slate); }
-
-    /* 요금제 비교 테이블 */
-    .plan-table-wrap { overflow-x: auto; margin-top: 2rem; -webkit-overflow-scrolling: touch; }
-    .plan-table { width: 100%; border-collapse: collapse; min-width: 480px; font-size: 0.85rem; }
-    .plan-table th, .plan-table td { padding: 0.7rem 1rem; text-align: center; border-bottom: 1px solid rgba(42,90,140,0.3); }
-    .plan-table th:first-child, .plan-table td:first-child { text-align: left; color: var(--slate-light); min-width: 130px; }
-    .plan-table thead tr { background: rgba(27,58,92,0.6); }
-    .plan-table thead th { color: var(--border); font-weight: 700; }
-    .plan-table thead th.pop { background: rgba(212,175,55,0.12); color: var(--gold); }
-    .plan-table .price-row td { font-size: 1.5rem; font-weight: 900; color: var(--gold); padding-bottom: 0.3rem; }
-    .plan-table .price-row td sub { font-size: 0.75rem; color: var(--slate-light); font-weight: 400; }
-    .plan-table .period-row td { font-size: 0.75rem; color: var(--slate-light); padding-top: 0; padding-bottom: 0.8rem; }
-    .plan-table tbody tr:hover { background: rgba(42,90,140,0.1); }
-    .plan-table .o { color: var(--gold); font-size: 1rem; }
-    .plan-table .x { color: rgba(160,174,192,0.4); font-size: 1rem; }
-    .plan-table .pop-col { background: rgba(212,175,55,0.05); }
-    .plan-table .badge-row td { padding-top: 0.4rem; }
-    .plan-pop-badge { font-size: 0.65rem; font-weight: 700; background: var(--gold); color: var(--navy); padding: 0.15rem 0.6rem; border-radius: 999px; display: inline-block; }
-
-    .refund-note {
-      margin-top: 1.5rem; padding: 0.9rem 1.2rem;
-      background: rgba(42,90,140,0.15); border-radius: 10px;
-      font-size: 0.78rem; color: var(--slate); line-height: 1.7;
-    }
-    .pay-methods { text-align: center; margin-top: 1.5rem; color: var(--slate-light); font-size: 0.82rem; }
-
-    /* ── 6. CONTACT ── */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
-    .contact-card {
-      background: var(--navy2); border: 1px solid rgba(42,90,140,0.4);
-      border-radius: 18px; padding: 2rem;
-    }
-    .contact-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
-    .contact-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
-    .contact-card p, .contact-card a { font-size: 0.875rem; color: var(--slate-light); text-decoration: none; }
-    .contact-card a:hover { color: var(--gold); }
-    .faq { margin-top: 3rem; }
-    .faq-item { border-bottom: 1px solid rgba(42,90,140,0.3); padding: 1.25rem 0; }
-    .faq-q { font-size: 0.9rem; font-weight: 700; color: var(--border); margin-bottom: 0.5rem; }
-    .faq-a { font-size: 0.85rem; color: var(--slate-light); line-height: 1.75; }
-
-    /* ── CTA ── */
+    /* ── CTA STRIP (old, kept for reference but replaced) ── */
     .cta-strip {
       text-align: center; padding: 5rem 6%;
       background: radial-gradient(ellipse at 50% 50%, rgba(42,90,140,0.3) 0%, transparent 70%);
@@ -276,50 +166,210 @@
     .cta-strip p { color: var(--slate-light); margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
 
     /* ── FOOTER ── */
-    footer { background: #07111e; border-top: 1px solid rgba(42,90,140,0.25); padding: 3.5rem 6%; }
+    footer {
+      background: #060D18; padding: 48px 6% 32px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
     .footer-inner { max-width: 1100px; margin: 0 auto; }
-    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; }
-    .footer-brand .logo { font-size: 1.4rem; font-weight: 900; color: var(--gold); }
-    .footer-brand p { font-size: 0.83rem; color: var(--slate); margin-top: 0.75rem; line-height: 1.8; }
-    .footer-col h4 { font-size: 0.83rem; font-weight: 700; color: var(--border); margin-bottom: 1rem; }
-    .footer-col ul { list-style: none; }
-    .footer-col li { margin-bottom: 0.55rem; }
-    .footer-col a { font-size: 0.82rem; color: var(--slate); text-decoration: none; }
-    .footer-col a:hover { color: var(--border); }
-    .footer-bottom {
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 0.75rem;
-      margin-top: 2.5rem; padding-top: 1.5rem;
-      border-top: 1px solid rgba(42,90,140,0.2);
+    .footer-logo-row { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .footer-logo-text { font-size: 1.1rem; font-weight: 900; color: var(--gold); }
+    .footer-logo-ai {
+      background: var(--gold); color: #060D18;
+      font-size: 0.65rem; font-weight: 800;
+      padding: 2px 7px; border-radius: 4px;
     }
-    .footer-bottom p { font-size: 0.78rem; color: var(--slate); }
-    .footer-legal { display: flex; gap: 1.5rem; }
-    .footer-legal a { font-size: 0.78rem; color: var(--slate); text-decoration: none; }
-    .footer-legal a:hover { color: var(--slate-light); }
+    .footer-tagline { font-size: 0.78rem; color: #475569; line-height: 1.7; margin-bottom: 24px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 24px; }
+    .footer-links a { font-size: 0.72rem; color: #475569; text-decoration: underline; }
+    .footer-legal {
+      font-size: 0.68rem; color: #374151; line-height: 1.8;
+      padding: 14px 16px; background: rgba(255,255,255,0.03);
+      border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 16px;
+    }
+    .footer-copy { font-size: 0.68rem; color: #374151; }
 
-    /* ── DISCLAIMER ── */
-    .disclaimer-bar {
-      background: rgba(212,175,55,0.04); border-top: 1px solid rgba(212,175,55,0.1);
-      padding: 1.2rem 6%; text-align: center;
-      font-size: 0.77rem; color: var(--slate); line-height: 1.7;
+    /* KSF FLOAT CARD */
+    .ksf-float-wrap {
+      max-width: 640px; margin: -36px auto 0; padding: 0 6%;
+      position: relative; z-index: 10;
+    }
+    .ksf-float {
+      background: #fff; border-radius: 20px;
+      padding: 24px 28px;
+      box-shadow: 0 12px 40px rgba(15,32,53,0.18);
+      border: 1px solid var(--border);
+    }
+    .ksf-float-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .ksf-tag {
+      background: #EEF2FF; color: var(--indigo);
+      font-size: 0.7rem; font-weight: 800;
+      padding: 3px 12px; border-radius: 999px; letter-spacing: 0.04em;
+    }
+    .ksf-tag-label { font-size: 0.78rem; color: var(--slate); font-weight: 600; }
+    .ksf-score-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+    .ksf-big-num { font-size: 3.2rem; font-weight: 900; color: var(--navy2); line-height: 1; }
+    .ksf-rank-badge {
+      background: #EEF2FF; color: var(--indigo);
+      font-size: 0.75rem; font-weight: 700;
+      padding: 4px 10px; border-radius: 8px;
+    }
+    .ksf-sub-text { font-size: 0.75rem; color: var(--slate-light); margin-bottom: 12px; }
+    .ksf-bar-bg { background: #F1F5F9; border-radius: 999px; height: 7px; }
+    .ksf-bar-fill {
+      background: linear-gradient(90deg, var(--indigo-light), var(--indigo));
+      border-radius: 999px; height: 7px; width: 72%;
+    }
+    .ksf-pill-row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+    .ksf-pill {
+      font-size: 0.65rem; font-weight: 600;
+      padding: 4px 10px; border-radius: 999px;
+      background: #F1F5F9; color: var(--slate);
+      border: 1px solid var(--border);
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .nav-links { display: none; }
-      .why-grid, .ai-layout, .free-paid-compare, .contact-grid { grid-template-columns: 1fr; }
-      .why-highlight { grid-column: 1; }
-      .plan-table { font-size: 0.78rem; }
-      .plan-table th, .plan-table td { padding: 0.55rem 0.6rem; }
-      .footer-top { grid-template-columns: 1fr 1fr; }
+    /* SECTION COMMON */
+    .section { padding: 80px 6%; }
+    .section-alt { background: var(--bg-alt); }
+    .sec-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.04em;
+      padding: 5px 14px; border-radius: 999px; margin-bottom: 12px;
     }
-    @media (max-width: 600px) {
-      .footer-top { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-      .how-section { padding: 2rem 1.5rem; }
-      .score-grid { grid-template-columns: 1fr; }
+    .sec-badge-navy { background: #EFF6FF; color: var(--navy2); }
+    .sec-badge-indigo { background: #EEF2FF; color: var(--indigo); }
+    .sec-title-dark {
+      font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; color: #0F172A;
+      line-height: 1.3; margin-bottom: 10px; word-break: keep-all;
     }
-    /* HERO STATS */
+    .sec-sub-dark { font-size: 0.9rem; color: var(--slate); line-height: 1.75; margin-bottom: 28px; }
+    .card-grid-2x2 {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+      max-width: 720px; margin: 0 auto;
+    }
+    .card-neutral {
+      background: #F8FAFC; border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px;
+    }
+    .card-neutral .card-icon { font-size: 1.3rem; margin-bottom: 8px; }
+    .card-neutral .card-lbl {
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 0.04em; margin-bottom: 6px;
+    }
+    .card-lbl-base { color: var(--slate); }
+    .card-lbl-indigo { color: var(--indigo); }
+    .card-neutral .card-text { font-size: 0.78rem; color: #475569; line-height: 1.6; }
+
+    /* KSF DETAIL SECTION */
+    .ksf-formula-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 16px; padding: 20px 24px; margin-bottom: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      max-width: 720px; margin-left: auto; margin-right: auto;
+    }
+    .ksf-formula-steps { display: flex; flex-direction: column; gap: 8px; }
+    .ksf-formula-step {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.82rem; color: var(--slate);
+    }
+    .ksf-step-arrow { color: var(--indigo-light); font-weight: 700; }
+    .ksf-step-hi { color: var(--indigo); font-weight: 700; }
+    .ksf-formula-result {
+      display: inline-block; margin-top: 12px;
+      background: #EEF2FF; color: var(--indigo);
+      font-size: 1.1rem; font-weight: 900;
+      padding: 10px 20px; border-radius: 10px;
+    }
+    .ksf-corr-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .ksf-corr-pill {
+      font-size: 0.68rem; font-weight: 600;
+      padding: 4px 12px; border-radius: 999px;
+      background: #F1F5F9; color: var(--slate);
+      border: 1px solid var(--border);
+    }
+    .ksf-bar-chart {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px 24px;
+      max-width: 720px; margin: 0 auto;
+    }
+    .ksf-bar-chart-title { font-size: 0.78rem; font-weight: 700; color: var(--slate); margin-bottom: 16px; }
+    .ksf-hbar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .ksf-hbar-name { font-size: 0.78rem; width: 56px; flex-shrink: 0; }
+    .ksf-hbar-name-hi { font-weight: 800; color: #0F172A; }
+    .ksf-hbar-name-lo { font-weight: 500; color: var(--slate-light); }
+    .ksf-hbar-track { flex: 1; background: #F1F5F9; border-radius: 999px; height: 12px; }
+    .ksf-hbar-fill { height: 12px; border-radius: 999px; }
+    .ksf-hbar-hi { background: linear-gradient(90deg, var(--indigo-light), var(--indigo)); }
+    .ksf-hbar-lo { background: #CBD5E1; }
+    .ksf-hbar-val { font-size: 0.8rem; font-weight: 900; width: 36px; text-align: right; }
+    .ksf-hbar-val-hi { color: var(--indigo); }
+    .ksf-hbar-val-lo { color: var(--slate-light); }
+
+    /* AI ENGINE SECTION */
+    .model-card-list { display: flex; flex-direction: column; gap: 14px; max-width: 720px; margin: 0 auto 20px; }
+    .model-card {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: #F8FAFC; border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px 20px;
+    }
+    .model-card-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: #EEF2FF; display: flex; align-items: center;
+      justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+    }
+    .model-card-name { font-size: 0.88rem; font-weight: 800; color: #0F172A; margin-bottom: 4px; }
+    .model-card-desc { font-size: 0.75rem; color: var(--slate); line-height: 1.6; }
+    .model-card-chip {
+      display: inline-block; margin-top: 6px;
+      font-size: 0.65rem; font-weight: 800;
+      padding: 2px 10px; border-radius: 999px;
+      background: #EEF2FF; color: var(--indigo);
+    }
+    .ens-box {
+      background: #EEF2FF; border: 1px solid #C7D2FE;
+      border-radius: 16px; padding: 20px 24px;
+      max-width: 720px; margin: 0 auto;
+    }
+    .ens-box-title { font-size: 0.8rem; font-weight: 800; color: var(--navy2); margin-bottom: 14px; }
+    .ens-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .ens-label { font-size: 0.72rem; color: var(--slate); width: 100px; flex-shrink: 0; }
+    .ens-track { flex: 1; background: #fff; border-radius: 999px; height: 10px; }
+    .ens-fill { height: 10px; border-radius: 999px; }
+    .ens-fill-a { background: var(--indigo-light); }
+    .ens-fill-b { background: var(--indigo); }
+    .ens-fill-c { background: var(--navy2); }
+    .ens-pct { font-size: 0.72rem; font-weight: 800; color: var(--indigo); width: 36px; text-align: right; }
+    .ens-result {
+      margin-top: 14px; padding-top: 12px;
+      border-top: 1px solid rgba(79,70,229,0.15);
+      font-size: 0.8rem; color: var(--indigo); font-weight: 700; text-align: center;
+    }
+
+    /* CONTACT & SUPPORT */
+    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 720px; margin: 0 auto 28px; }
+    .faq-item {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden; text-align: left;
+    }
+    .faq-q {
+      padding: 16px 20px;
+      font-size: 0.85rem; font-weight: 700; color: #0F172A;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .faq-a {
+      padding: 14px 20px;
+      font-size: 0.8rem; color: var(--slate); line-height: 1.7;
+    }
+    .warning-box {
+      background: #fffbeb; border: 1px solid rgba(212,175,55,0.3);
+      border-left: 4px solid var(--gold);
+      border-radius: 12px; padding: 18px 20px;
+      font-size: 0.78rem; color: var(--slate); line-height: 1.75;
+      max-width: 720px; margin: 0 auto;
+      text-align: left;
+    }
+    .warning-box-title { font-size: 0.8rem; font-weight: 800; color: #92700A; margin-bottom: 8px; }
+
+    /* ── HERO STATS ── */
     .hero-stats {
       display: flex; justify-content: center; gap: 3rem;
       padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);
@@ -329,6 +379,20 @@
     .hero-stat-num { font-size: 1.6rem; font-weight: 900; color: #fff; }
     .hero-stat-unit { font-size: 0.85rem; color: var(--gold); margin-left: 2px; }
     .hero-stat-lbl { font-size: 0.72rem; color: var(--slate); margin-top: 4px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .how-section { padding: 2rem 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .card-grid-2x2 { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; }
+      .ksf-float-wrap { margin-top: -16px; }
+      .model-card { flex-direction: column; }
+    }
   </style>
 </head>
 <body>
@@ -345,10 +409,9 @@
     <li><a href="#why">서비스 소개</a></li>
     <li><a href="#features">주요 기능</a></li>
     <li><a href="#ai">AI 분석</a></li>
-    <li><a href="#pricing">요금제</a></li>
     <li><a href="#contact">고객문의</a></li>
   </ul>
-  <span class="nav-cta">시작하기 <small style="font-size:0.65rem; opacity:0.7;">(준비 중)</small></span>
+  <a href="https://app.malbab.com" target="_blank" rel="noopener" class="nav-cta">시작하기</a>
 </nav>
 
 <!-- ─── HERO ─── -->
@@ -377,41 +440,115 @@
   </div>
 </section>
 
-
-<!-- ─── 1. WHY 말밥 ─── -->
-<div id="why">
-  <div class="section-wrap">
-    <div class="chip">WHY MALBAB</div>
-    <h2 class="section-title">과학으로 즐기는 경마를 위한 <strong><span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span></strong></h2>
-    <p class="section-desc">KRA 공식 데이터와 AI 분석으로 누구나 스마트하게 경마를 즐길 수 있습니다.</p>
-
-    <div class="why-grid">
-      <div class="why-card">
-        <h3>📌 문제: 공공데이터는 있지만 분석 도구가 없다</h3>
-        <p>KRA(한국마사회)는 경주 결과, 말 성적, 기수·조교사 데이터를 공공 API로 공개하고 있습니다. 하지만 이를 직접 수집·분석하려면 개발 전문성과 상당한 시간이 필요합니다. 일반 경마 팬들은 이 데이터를 활용할 방법이 없습니다.</p>
-      </div>
-      <div class="why-card">
-        <h3>💡 해결: AI가 데이터를 분석, 누구나 전문가처럼</h3>
-        <p><span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span>는 매 경주일 KRA 공식 데이터를 자동 수집하고, 머신러닝 모델로 분석해 직관적인 결과를 제공합니다. 데이터 과학 지식 없이도 전문가 수준의 분석을 바로 활용할 수 있습니다.</p>
-      </div>
-      <div class="why-card">
-        <h3>🏛️ 책임: 투명하고 근거 있는 분석</h3>
-        <p><span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span>는 어떤 경우에도 특정 마권 구매를 권유하지 않습니다. 제공하는 모든 수치는 실제 데이터에 근거하며, AI 적중률도 투명하게 공개합니다. 정보 제공자로서의 책임을 최우선으로 합니다.</p>
-      </div>
-      <div class="why-card">
-        <h3>🌱 목표: 경마 문화의 건강한 대중화</h3>
-        <p>경마는 전 세계 수백만 팬을 가진 스포츠입니다. 합리적인 정보를 바탕으로 즐기는 경마 문화, 도박이 아닌 스포츠로서의 경마 — <span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span>가 지향하는 방향입니다.</p>
-      </div>
+<!-- ─── KSF FLOAT CARD ─── -->
+<div class="ksf-float-wrap">
+  <div class="ksf-float">
+    <div class="ksf-float-header">
+      <span class="ksf-tag">KSF</span>
+      <span class="ksf-tag-label">Korean Speed Figure — 한국 독자 속도 지수</span>
+    </div>
+    <div class="ksf-score-row">
+      <div class="ksf-big-num">108</div>
+      <div class="ksf-rank-badge">서울 1200m 상위 8%</div>
+    </div>
+    <div class="ksf-sub-text">트랙 컨디션 보정 · 부담중량 보정 · 거리 환산 적용</div>
+    <div class="ksf-bar-bg"><div class="ksf-bar-fill"></div></div>
+    <div class="ksf-pill-row">
+      <span class="ksf-pill">🌧️ 트랙 바이어스</span>
+      <span class="ksf-pill">⚖️ 중량 보정</span>
+      <span class="ksf-pill">📏 거리 환산</span>
     </div>
   </div>
 </div>
+
+<!-- ─── 데이터 스포츠 ─── -->
+<section id="why" class="section" style="padding-top:64px;">
+  <div class="section-wrap" style="text-align:center;">
+    <span class="sec-badge sec-badge-navy">📊 데이터 스포츠</span>
+    <h2 class="sec-title-dark">남녀노소 모두가<br>데이터로 즐기는 경마</h2>
+    <p class="sec-sub-dark">경마는 데이터 스포츠입니다.</p>
+    <div class="card-grid-2x2">
+      <div class="card-neutral">
+        <div class="card-icon">📋</div>
+        <div class="card-lbl card-lbl-base">기존 방식</div>
+        <div class="card-text">비과학적 직관과 주관적 예감에 의존한 분석</div>
+      </div>
+      <div class="card-neutral">
+        <div class="card-icon">📊</div>
+        <div class="card-lbl card-lbl-indigo">말밥AI</div>
+        <div class="card-text">수치 기반 AI 분석으로 객관적 판단 가능</div>
+      </div>
+      <div class="card-neutral">
+        <div class="card-icon">🌧️</div>
+        <div class="card-lbl card-lbl-base">기존 방식</div>
+        <div class="card-text">트랙·날씨 조건 차이를 비교할 방법 없음</div>
+      </div>
+      <div class="card-neutral">
+        <div class="card-icon">⚡</div>
+        <div class="card-lbl card-lbl-indigo">말밥AI</div>
+        <div class="card-text">KSF로 모든 조건 보정 후 말별 비교 가능</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── KSF 독자 지표 ─── -->
+<section class="section section-alt" style="text-align:center;">
+  <div class="section-wrap">
+    <span class="sec-badge sec-badge-indigo">★ 독자 지표</span>
+    <h2 class="sec-title-dark">KSF —<br>한국 경마 속도 지수</h2>
+    <p class="sec-sub-dark">한국 트랙에 최적화된 독자 속도 지수.<br>단순 기록 비교가 아닌 보정된 과학적 수치입니다.</p>
+
+    <div class="ksf-formula-card">
+      <div style="font-size:0.78rem;font-weight:700;color:var(--slate);margin-bottom:12px;">KSF 계산 원리</div>
+      <div class="ksf-formula-steps">
+        <div class="ksf-formula-step">
+          <span>주파기록</span>
+          <span class="ksf-step-arrow">→</span>
+          <span class="ksf-step-hi">Track Variant 보정</span>
+        </div>
+        <div class="ksf-formula-step">
+          <span class="ksf-step-arrow">→</span>
+          <span class="ksf-step-hi">부담중량 보정</span>
+          <span class="ksf-step-arrow">→</span>
+          <span class="ksf-step-hi">거리 환산</span>
+        </div>
+      </div>
+      <div class="ksf-formula-result">→ KSF 108</div>
+      <div class="ksf-corr-pills">
+        <span class="ksf-corr-pill">🌧️ 양호/다습/불량</span>
+        <span class="ksf-corr-pill">⚖️ 부담중량</span>
+        <span class="ksf-corr-pill">📏 서울/부산</span>
+      </div>
+    </div>
+
+    <div class="ksf-bar-chart">
+      <div class="ksf-bar-chart-title">같은 경주 — 말별 KSF 비교</div>
+      <div class="ksf-hbar-row">
+        <span class="ksf-hbar-name ksf-hbar-name-hi">번개말</span>
+        <div class="ksf-hbar-track"><div class="ksf-hbar-fill ksf-hbar-hi" style="width:82%"></div></div>
+        <span class="ksf-hbar-val ksf-hbar-val-hi">108</span>
+      </div>
+      <div class="ksf-hbar-row">
+        <span class="ksf-hbar-name ksf-hbar-name-lo">돌풍이</span>
+        <div class="ksf-hbar-track"><div class="ksf-hbar-fill ksf-hbar-lo" style="width:66%"></div></div>
+        <span class="ksf-hbar-val ksf-hbar-val-lo">97</span>
+      </div>
+      <div class="ksf-hbar-row" style="margin-bottom:0">
+        <span class="ksf-hbar-name ksf-hbar-name-lo">천마</span>
+        <div class="ksf-hbar-track"><div class="ksf-hbar-fill ksf-hbar-lo" style="width:55%"></div></div>
+        <span class="ksf-hbar-val ksf-hbar-val-lo">89</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ─── 2. FEATURES ─── -->
 <div id="features">
   <div class="section-wrap">
     <div class="chip">FEATURES</div>
-    <h2 class="section-title"><span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span>의 <strong>핵심 기능</strong></h2>
-    <p class="section-desc">경마일 경주 분석부터 AI 챗봇까지, 필요한 모든 것을 한 곳에.</p>
+    <h2 class="section-title" style="color:#0F172A;"><span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span>의 <strong>핵심 기능</strong></h2>
+    <p class="section-desc" style="color:var(--slate);">경마일 경주 분석부터 실시간 ELO 랭킹까지, 필요한 모든 것을 한 곳에.</p>
     <div class="feat-grid">
       <div class="feat-card">
         <div class="feat-icon">🤖</div>
@@ -424,9 +561,9 @@
         <p>기본 능력, 최근 폼, 거리 적성, 주로 적성, 기수 케미, 조교사 폼, 컨디션, 밸류 배당, 구간 기록, 스크래핑 인사이트 — 10가지 지표를 점수화해 종합 평가합니다.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon">💬</div>
-        <h3>AI 분석 챗봇</h3>
-        <p>Claude AI 기반 챗봇이 경주별 심층 분석을 대화 형태로 제공합니다. "이 말의 최근 폼은?", "오늘 주로 상태는?" 등 자유롭게 질문하세요.</p>
+        <div class="feat-icon">📡</div>
+        <h3>ELO 강도 랭킹</h3>
+        <p>경주 결과로 실시간 갱신되는 말별 동적 강도 지수. 최근 폼과 상대 전적을 반영합니다.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon">🏟️</div>
@@ -456,26 +593,26 @@
 <div id="how" style="padding: 0 0 2rem;">
   <div class="section-wrap">
     <div class="how-section">
-      <div class="chip">HOW TO USE</div>
-      <h2 class="section-title">이용 방법 — <strong>4단계로 시작</strong></h2>
+      <div class="chip" style="color:var(--indigo);">HOW TO USE</div>
+      <h2 class="section-title" style="color:#0F172A;">이용 방법 — <strong style="color:var(--indigo);">4단계로 시작</strong></h2>
       <div class="steps">
         <div class="step">
-          <div class="step-num gate-1">1</div>
-          <h3>플랜 선택 & 시작</h3>
-          <p>Free로 바로 시작하거나, Pro·Max 구독 또는 경마일 이용권으로 더 빠른 인사이트를 얻으세요.</p>
+          <div class="step-num">1</div>
+          <h3>앱으로 시작</h3>
+          <p>app.malbab.com에서 바로 시작하세요. 설치 없이 PWA로 모바일에서도 이용 가능합니다.</p>
         </div>
         <div class="step">
-          <div class="step-num gate-2">2</div>
+          <div class="step-num">2</div>
           <h3>경주 선택 & 분석 열람</h3>
           <p>경마일 아침, 앱에서 원하는 경주를 선택하면 AI 예측과 10가지 지표 분석이 바로 표시됩니다.</p>
         </div>
         <div class="step">
-          <div class="step-num gate-3">3</div>
-          <h3>AI 챗봇에게 질문</h3>
-          <p>궁금한 말, 기수, 경주에 대해 AI 챗봇에 자유롭게 질문하고 전문가 수준의 인사이트를 얻으세요.</p>
+          <div class="step-num">3</div>
+          <h3>KSF & ELO 확인</h3>
+          <p>말별 속도 지수(KSF)와 ELO 강도 랭킹으로 객관적인 수치 비교를 합니다.</p>
         </div>
         <div class="step">
-          <div class="step-num gate-4">4</div>
+          <div class="step-num">4</div>
           <h3>주로 편향 확인</h3>
           <p>경주 직전 주로 상태와 편향 분석을 확인해 오늘 경마장에서 어떤 전술이 유리한지 파악합니다.</p>
         </div>
@@ -484,282 +621,134 @@
   </div>
 </div>
 
-<!-- ─── 4. AI 알고리즘 ─── -->
-<div id="ai">
+<!-- ─── AI 앙상블 엔진 ─── -->
+<section id="ai" class="section" style="text-align:center;">
   <div class="section-wrap">
-    <div class="chip">AI & ALGORITHM</div>
-    <h2 class="section-title">AI가 예측하는 방법 — <strong>과학적 근거</strong></h2>
+    <span class="sec-badge sec-badge-indigo">🤖 AI 엔진</span>
+    <h2 class="sec-title-dark">AI 앙상블<br>분석 엔진</h2>
+    <p class="sec-sub-dark">단순 예측이 아닙니다. 복수의 AI 모델을 결합한 앙상블로<br>경주를 과학적으로 분석합니다.</p>
 
-    <div class="ai-layout">
-      <div class="ai-text">
-        <p><strong><span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span>는 단순한 순위 통계가 아닙니다.</strong>
-        경주 결과에 영향을 미치는 10가지 핵심 요인을 수치화하고, KRA 공식 API와 스크래핑 데이터를 결합해 머신러닝 모델로 종합 분석합니다.</p>
-        <p>10만 건 이상의 과거 경주 데이터를 학습한 AI는 각 출전마의 <strong>현재 능력, 컨디션, 환경 적응력</strong>을 종합 평가해 경주마 분석 지표를 산출합니다. 단순 승률이 아닌 <strong>현재 상태 기반의 동적 분석</strong>이 핵심입니다.</p>
+    <div class="model-card-list">
+      <div class="model-card">
+        <div class="model-card-icon">🤖</div>
+        <div>
+          <div class="model-card-name">LightGBM 예측 모델</div>
+          <div class="model-card-desc">KSF·ELO·폼 지표를 통합한 머신러닝 기반 분석.</div>
+          <span class="model-card-chip">74,000건 학습</span>
+        </div>
       </div>
-
-      <div>
-        <div class="score-grid">
-          <div class="score-item">
-            <div class="name">① 기본 능력</div>
-            <div class="desc">과거 성적, 레이팅 기반 절대 능력</div>
-            <div class="score-bar-wrap"><div class="score-bar" style="width:85%"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="name">② 최근 폼</div>
-            <div class="desc">최근 5경주 성적 추이 분석</div>
-            <div class="score-bar-wrap"><div class="score-bar" style="width:80%"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="name">③ 거리 적성</div>
-            <div class="desc">거리별 과거 성적 적합도</div>
-            <div class="score-bar-wrap"><div class="score-bar" style="width:72%"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="name">④ 주로 적성</div>
-            <div class="desc">경마장·주로 상태별 성적</div>
-            <div class="score-bar-wrap"><div class="score-bar" style="width:68%"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="name">⑤ 기수 케미</div>
-            <div class="desc">말-기수 조합 승률 분석</div>
-            <div class="score-bar-wrap"><div class="score-bar" style="width:75%"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="name">⑥ 조교사 폼</div>
-            <div class="desc">최근 조교사 성적 추이</div>
-            <div class="score-bar-wrap"><div class="score-bar" style="width:60%"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="name">⑦ 컨디션</div>
-            <div class="desc">체중 변화, 출전 간격</div>
-            <div class="score-bar-wrap"><div class="score-bar" style="width:65%"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="name">⑧ 밸류 배당</div>
-            <div class="desc">AI 확률 vs 배당 괴리 분석</div>
-            <div class="score-bar-wrap"><div class="score-bar" style="width:70%"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="name">⑨ 구간 기록</div>
-            <div class="desc">레이스 스타일 분류 (선행/중간/추입) + 스피드 표준화</div>
-            <div class="score-bar-wrap"><div class="score-bar" style="width:78%"></div></div>
-          </div>
-          <div class="score-item">
-            <div class="name">⑩ 스크래핑 인사이트</div>
-            <div class="desc">전문 미디어·커뮤니티 조교 평가 및 전문가 코멘트 반영</div>
-            <div class="score-bar-wrap"><div class="score-bar" style="width:62%"></div></div>
-          </div>
+      <div class="model-card">
+        <div class="model-card-icon">🏆</div>
+        <div>
+          <div class="model-card-name">LambdaMART 순위 최적화</div>
+          <div class="model-card-desc">경주 내 상대 순위를 직접 최적화하는 Learning-to-Rank.</div>
+          <span class="model-card-chip">경주 내 순위 최적화</span>
+        </div>
+      </div>
+      <div class="model-card">
+        <div class="model-card-icon">⚡</div>
+        <div>
+          <div class="model-card-name">앙상블 종합 점수</div>
+          <div class="model-card-desc">복수 모델 결합 → S/A/B/C/D 등급으로 직관적 표시.</div>
+          <span class="model-card-chip">최종 등급 산출</span>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- ─── 5. PRICING ─── -->
-<div id="pricing" class="pricing-wrap">
-  <div class="section-wrap">
-    <div class="chip">PRICING</div>
-    <h2 class="section-title">AI 서비스처럼 — <strong>필요한 만큼만</strong></h2>
-    <p style="text-align:center; color:var(--slate-light); font-size:0.9rem; margin-bottom:2rem;">
-      더 일찍 볼수록, 더 깊이 준비할 수 있습니다
-    </p>
-
-    <!-- 요금제 비교 테이블 (Free / Pro / Max) -->
-    <div class="plan-table-wrap">
-      <table class="plan-table">
-        <thead>
-          <tr>
-            <th>기능</th>
-            <th>Free</th>
-            <th class="pop">Pro ⭐</th>
-            <th>Max</th>
-          </tr>
-          <tr class="badge-row">
-            <td></td>
-            <td></td>
-            <td class="pop-col"><span class="plan-pop-badge">가장 인기</span></td>
-            <td></td>
-          </tr>
-          <tr class="price-row">
-            <td>가격</td>
-            <td>무료</td>
-            <td class="pop-col">13,000<sub>원/월</sub></td>
-            <td>40,000<sub>원/월</sub></td>
-          </tr>
-          <tr class="period-row">
-            <td></td>
-            <td>영구 무료</td>
-            <td class="pop-col">월 구독 · 언제든 해지</td>
-            <td>월 구독 · 언제든 해지</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>AI 예측 공개 시각</td>
-            <td>경주 30분 전</td>
-            <td class="pop-col" style="color:var(--gold); font-weight:700;">당일 오전 9시</td>
-            <td style="color:#c4b5fd; font-weight:700;">전날 오후 6시</td>
-          </tr>
-          <tr>
-            <td>월 예측 조회 횟수</td>
-            <td>15경주</td>
-            <td class="pop-col">100경주</td>
-            <td>무제한</td>
-          </tr>
-          <tr>
-            <td>AI 분석 지표</td>
-            <td>3개 (요약)</td>
-            <td class="o pop-col">전체 7개</td>
-            <td class="o">전체 7개 + 근거</td>
-          </tr>
-          <tr>
-            <td>AI 챗봇</td>
-            <td>하루 10회</td>
-            <td class="o pop-col">무제한</td>
-            <td class="o">무제한 (고급 AI)</td>
-          </tr>
-          <tr>
-            <td>ML 하이브리드 예측</td>
-            <td class="x">—</td>
-            <td class="o pop-col">✓</td>
-            <td class="o">✓</td>
-          </tr>
-          <tr>
-            <td>복병·가치배당 감지</td>
-            <td class="x">—</td>
-            <td class="o pop-col">✓</td>
-            <td class="o">✓</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- 일일권 안내 -->
-    <div style="background:rgba(27,58,92,0.4); border:1px solid rgba(42,90,140,0.4); border-radius:1rem; padding:1.2rem 1.5rem; margin-top:1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
-      <div>
-        <div style="font-weight:700; color:var(--border); font-size:0.95rem;">💳 경마일 이용권 — 구독 없이 하루만</div>
-        <div style="color:var(--slate-light); font-size:0.82rem; margin-top:0.3rem;">Pro 동급 혜택 · 당일 오전 9시 공개 · 당일 전 경주 열람</div>
+    <div class="ens-box">
+      <div class="ens-box-title">분석 지표 구성</div>
+      <div class="ens-row">
+        <span class="ens-label">KSF 속도 지수</span>
+        <div class="ens-track"><div class="ens-fill ens-fill-a" style="width:45%"></div></div>
+        <span class="ens-pct">핵심</span>
       </div>
-      <div style="font-size:1.6rem; font-weight:900; color:var(--gold);">5,000<span style="font-size:0.85rem; font-weight:400; color:var(--slate-light);">원/일</span></div>
-    </div>
-
-    <div class="pay-methods">
-      💳 카카오페이 · 토스페이 · 삼성페이 · 가상계좌 · 계좌이체 결제 지원
-    </div>
-
-    <div class="refund-note">
-      환불 정책: 구독 결제 후 미이용 시 7일 이내 전액 환불 가능.
-      이용 시작(경주 분석 열람, AI 챗봇 사용) 후에는 디지털 콘텐츠 특성상 환불이 불가합니다 (전자상거래법 제17조 제2항).
-      환불 문의: contact@malbab.com
+      <div class="ens-row">
+        <span class="ens-label">ELO 강도 지수</span>
+        <div class="ens-track"><div class="ens-fill ens-fill-b" style="width:30%"></div></div>
+        <span class="ens-pct">보조</span>
+      </div>
+      <div class="ens-row" style="margin-bottom:0">
+        <span class="ens-label">폼·기수·조교사</span>
+        <div class="ens-track"><div class="ens-fill ens-fill-c" style="width:25%"></div></div>
+        <span class="ens-pct">보조</span>
+      </div>
+      <div class="ens-result">→ 최종 종합 점수 (S / A / B / C / D 등급)</div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- ─── CTA ─── -->
-<div class="cta-strip">
-  <h2>지금 <span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span>로 경마를 더 스마트하게</h2>
-  <p>데이터와 AI가 분석하는 경마 — 첫 경주일부터 차이를 경험하세요.</p>
-  <a href="https://app.malbab.com/pricing" class="btn-gold" style="text-decoration:none; display:inline-block;">요금제 보기 →</a>
-</div>
+<section style="background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);text-align:center;padding:80px 6%;">
+  <div class="section-wrap" style="max-width:560px;">
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:#fff;margin-bottom:28px;word-break:keep-all;line-height:1.3;">
+      지금 무료로<br>시작하세요
+    </h2>
+    <a href="https://app.malbab.com" target="_blank" rel="noopener"
+       style="display:inline-block;background:var(--gold);color:var(--navy);font-size:1rem;font-weight:800;padding:16px 40px;border-radius:12px;text-decoration:none;">
+      앱으로 시작하기 →
+    </a>
+  </div>
+</section>
 
-<!-- ─── 6. CONTACT ─── -->
-<div id="contact">
+<!-- ─── Contact & Support ─── -->
+<section id="contact" class="section section-alt" style="text-align:center;">
   <div class="section-wrap">
-    <div class="chip">CONTACT & SUPPORT</div>
-    <h2 class="section-title">고객 <strong>문의</strong></h2>
-    <p class="section-desc">서비스 이용 중 불편하신 점이나 궁금한 사항을 언제든지 문의해주세요.</p>
+    <span class="sec-badge sec-badge-navy">💬 도움말</span>
+    <h2 class="sec-title-dark">자주 묻는 질문</h2>
+    <p class="sec-sub-dark">궁금한 점이 있으시면 아래를 확인해주세요.</p>
 
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="contact-icon">📧</div>
-        <h3>이메일 문의</h3>
-        <p>일반 문의, 결제·환불 관련 사항</p>
-        <a href="mailto:contact@malbab.com">contact@malbab.com</a>
-        <p style="margin-top:0.5rem; font-size:0.8rem; color: var(--slate);">평일 10:00–18:00 / 경주일 응답 지연 가능</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">❓ 말밥AI는 마권 구매를 권유하나요?</div>
+        <div class="faq-a">아닙니다. 말밥AI는 데이터 기반 경마 분석 정보를 제공할 뿐, 마권 구매를 권유하거나 중개하지 않습니다. 최종 판단은 항상 이용자 본인이 합니다.</div>
       </div>
-      <div class="contact-card">
-        <div class="contact-icon">🔒</div>
-        <h3>개인정보 관련</h3>
-        <p>개인정보 열람·삭제·정정 요청</p>
-        <a href="mailto:privacy@malbab.com">privacy@malbab.com</a>
-        <p style="margin-top:0.5rem; font-size:0.8rem; color: var(--slate);">접수 후 5영업일 이내 처리</p>
+      <div class="faq-item">
+        <div class="faq-q">❓ 이용 연령 제한이 있나요?</div>
+        <div class="faq-a">유료 서비스는 만 19세 이상 성인만 이용 가능합니다. 미성년자의 유료 서비스 이용을 금지합니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">❓ AI 분석 결과는 얼마나 정확한가요?</div>
+        <div class="faq-a">AI 적중률은 투명하게 공개합니다. 분석 결과는 참고 목적이며 실제 경주 결과와 다를 수 있습니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">❓ 문의 및 고객지원은 어디서 받나요?</div>
+        <div class="faq-a">고객지원 이메일로 문의해주세요. 운영시간: 평일 10:00~18:00</div>
       </div>
     </div>
 
-    <!-- FAQ -->
-    <div class="faq">
-      <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:1.5rem; color:var(--border);">자주 묻는 질문</h3>
-
-      <div class="faq-item">
-        <div class="faq-q">Q. <span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span>의 예측 적중률은 얼마나 되나요?</div>
-        <div class="faq-a">현재 Top-3 예측 적중률은 55% 이상입니다. 이는 랜덤 선택(33%) 대비 약 1.7배 높은 수치입니다. 적중률은 서비스 앱 내에서 투명하게 공개됩니다. 단, 이는 과거 성과이며 미래 수익을 보장하지 않습니다.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Q. 어떻게 결제하나요?</div>
-        <div class="faq-a">카카오페이, 토스페이, 삼성페이, 가상계좌, 계좌이체를 지원합니다. Pro·Max 구독은 결제 즉시 활성화되며, 경마일 이용권은 당일만 사용 가능합니다.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Q. 플랜별로 분석을 언제부터 볼 수 있나요?</div>
-        <div class="faq-a">Free는 경주 30분 전, Pro는 경마 당일 오전 9시, Max는 전날 오후 6시부터 볼 수 있습니다. 경마일 이용권(5,000원)은 Pro와 동일하게 당일 오전 9시 공개입니다.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Q. 미성년자도 이용할 수 있나요?</div>
-        <div class="faq-a">아니요. <span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span> 유료 서비스는 만 19세 이상 성인만 이용 가능합니다.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Q. 특정 말을 추천해주거나 마권 구매를 도와주나요?</div>
-        <div class="faq-a">아니요. <span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span>는 데이터 기반 분석 정보를 제공할 뿐, 마권 구매를 권유하거나 중개하지 않습니다. 최종 판단은 항상 이용자 본인이 합니다.</div>
-      </div>
+    <div class="warning-box">
+      <div class="warning-box-title">⚠️ 이용자 안내 및 경고</div>
+      말밥AI가 제공하는 모든 분석 정보는 참고 목적의 데이터 분석 결과이며 마권 구매 권유가 아닙니다.
+      경마 및 관련 도박은 중독될 수 있으며, 한국마사회 고객지원센터(1566-3333)에서 상담 받으실 수 있습니다.
     </div>
   </div>
-</div>
-
-<!-- ─── DISCLAIMER ─── -->
-<div class="disclaimer-bar">
-  ⚠️ <span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span>가 제공하는 모든 분석 정보는 참고 목적의 데이터 분석 결과이며 마권 구매 권유가 아닙니다. 경마 및 관련 도박은 중독될 수 있습니다.
-  도박 중독 예방 상담: <strong>1336</strong> (한국도박문제예방치유원, 24시간 무료). 만 19세 미만 이용 불가.
-</div>
+</section>
 
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="logo" style="font-size:1.6rem; display:flex; align-items:center; gap:0.4rem;">🏇 <span class="bi"><span class="bi-m">말밥</span><span class="bi-a">AI</span></span></div>
-        <p>남녀노소 모두가 과학으로 즐기는 새로운 경마문화를 선도합니다.</p>
-      </div>
-      <div class="footer-col">
-        <h4>서비스</h4>
-        <ul>
-          <li><a href="#why">말밥 AI 소개</a></li>
-          <li><a href="#features">주요 기능</a></li>
-          <li><a href="#ai">AI 분석 방법</a></li>
-          <li><a href="#pricing">요금제</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>지원</h4>
-        <ul>
-          <li><a href="#contact">고객문의</a></li>
-          <li><a href="mailto:contact@malbab.com">contact@malbab.com</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>법적 고지</h4>
-        <ul>
-          <li><a href="/privacy.html">개인정보처리방침</a></li>
-          <li><a href="/terms.html">이용약관</a></li>
-        </ul>
-      </div>
+    <div class="footer-logo-row">
+      <span style="font-size:1.2rem;">🏇</span>
+      <span class="footer-logo-text">말밥</span>
+      <span class="footer-logo-ai">AI</span>
     </div>
-    <div class="footer-bottom">
-      <p>사업자: 유리기술 | 사업자등록번호: 433-31-01746</p>
-      <p>© 2025 말밥 AI (Malbab AI). All rights reserved.</p>
-      <div class="footer-legal">
-        <a href="/privacy.html">개인정보처리방침</a>
-        <a href="/terms.html">이용약관</a>
-        <a href="mailto:contact@malbab.com">문의</a>
-      </div>
+    <div class="footer-tagline">
+      데이터와 AI로 경마를 과학으로.<br>
+      KRA 공공데이터 기반 분석 플랫폼.
+    </div>
+    <div class="footer-links">
+      <a href="#">이용약관</a>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">청소년보호정책</a>
+      <a href="#">광고/제휴 문의</a>
+      <a href="#">서비스 소개</a>
+    </div>
+    <div class="footer-legal">
+      ⚠️ 말밥AI(Malbab AI)가 제공하는 모든 분석 정보는 참고 목적이며 마권 구매 권유가 아닙니다.
+      경마 관련 도박은 중독될 수 있습니다. 도박 문제 상담: 한국도박문제관리센터 1336
+    </div>
+    <div class="footer-copy">
+      © 2025 말밥 AI (Malbab AI). All rights reserved.
     </div>
   </div>
 </footer>
