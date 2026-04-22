@@ -54,80 +54,79 @@
     }
     .nav-cta:hover { opacity: .9; }
 
-    /* HERO — 짧고 강하게 */
+    /* HERO — 텍스트 중심, 이미지 제거 */
     .hero {
-      position: relative; min-height: 88vh;
-      background: linear-gradient(180deg, var(--primary-soft) 0%, var(--surface) 70%);
-      padding: 120px 5vw 80px;
-      display: flex; align-items: center; overflow: hidden;
+      position: relative; min-height: 82vh;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(31,91,74,.08) 0%, transparent 50%),
+        linear-gradient(180deg, var(--primary-soft) 0%, var(--surface) 85%);
+      padding: 140px 5vw 100px;
+      display: flex; align-items: center; text-align: center;
+      overflow: hidden;
     }
     .hero-wrap {
-      max-width: 1200px; margin: 0 auto; width: 100%;
-      display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center;
+      max-width: 860px; margin: 0 auto; width: 100%;
+      position: relative;
     }
     .hero-tag {
       display: inline-flex; align-items: center; gap: .4rem;
       background: var(--primary-soft); color: var(--primary);
-      padding: .4rem .9rem; border-radius: 99px;
+      padding: .45rem 1rem; border-radius: 99px;
       font-size: .78rem; font-weight: 700; letter-spacing: 1px;
-      border: 1px solid rgba(31,91,74,.15);
-      margin-bottom: 1.5rem;
+      border: 1px solid rgba(31,91,74,.18);
+      margin-bottom: 1.8rem;
     }
     .hero-title {
-      font-size: clamp(2.3rem, 5.2vw, 3.8rem);
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
       line-height: 1.12; font-weight: 900;
-      color: var(--text-1); letter-spacing: -2px;
-      margin-bottom: 1.2rem;
+      color: var(--text-1); letter-spacing: -2.5px;
+      margin-bottom: 1.4rem;
     }
     .hero-title .accent { color: var(--primary); }
     .hero-desc {
-      font-size: 1.05rem; color: var(--text-2);
-      line-height: 1.75; margin-bottom: 1.8rem; max-width: 520px;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: var(--text-2);
+      line-height: 1.8; margin: 0 auto 2.2rem; max-width: 640px;
     }
     .hero-desc strong { color: var(--primary); font-weight: 800; }
-    .hero-actions { display: flex; gap: .8rem; align-items: center; flex-wrap: wrap; }
+    .hero-actions { display: flex; gap: .8rem; align-items: center; flex-wrap: wrap; justify-content: center; }
     .btn-primary {
       background: var(--primary); color: #fff;
-      font-weight: 700; padding: .95rem 1.8rem; border-radius: 12px;
-      font-size: .95rem; transition: transform .15s;
+      font-weight: 700; padding: 1rem 2rem; border-radius: 12px;
+      font-size: 1rem; transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 4px 14px rgba(31,91,74,.25);
     }
-    .btn-primary:hover { transform: translateY(-1px); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(31,91,74,.35); }
     .btn-ghost {
       color: var(--primary); font-weight: 600;
-      padding: .95rem 1.2rem; font-size: .95rem;
+      padding: 1rem 1.3rem; font-size: 1rem;
     }
     .btn-ghost:hover { text-decoration: underline; }
 
-    .hero-legal {
-      margin-top: 2rem; padding-top: 1rem;
-      border-top: 1px solid var(--border);
-      font-size: .72rem; color: var(--text-muted); max-width: 520px;
-      line-height: 1.6;
-    }
-
-    .hero-visual { position: relative; }
-    .hero-img-wrap {
-      position: relative;
-      border-radius: 20px; overflow: hidden;
-      box-shadow: var(--shadow);
-      background: var(--surface);
-    }
-    .hero-img {
-      width: 100%; aspect-ratio: 4/3;
-      object-fit: cover; object-position: center 58%;
-    }
+    /* 히어로 아래 신뢰 지표 (기존 기술 섹션에서 이동) */
     .hero-stats {
-      position: absolute; bottom: 16px; left: 16px; right: 16px;
-      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+      max-width: 760px; margin: 3.5rem auto 0;
+      padding-top: 2.5rem; border-top: 1px solid var(--border);
     }
     .hero-stat {
-      background: rgba(255,255,255,.95); backdrop-filter: blur(6px);
-      padding: .55rem .7rem; border-radius: 10px;
-      border: 1px solid var(--border);
       text-align: center;
     }
-    .hero-stat-label { color: var(--text-muted); font-size: .6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-    .hero-stat-value { color: var(--primary); font-size: .95rem; font-weight: 900; font-variant-numeric: tabular-nums; margin-top: .15rem; }
+    .hero-stat-val {
+      font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 900;
+      color: var(--primary); letter-spacing: -1px;
+      font-variant-numeric: tabular-nums; line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: .7rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 1.5px;
+      font-weight: 600; margin-top: .6rem;
+    }
+
+    .hero-legal {
+      margin-top: 2rem; font-size: .72rem; color: var(--text-muted);
+      max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.6;
+    }
 
     /* 철학 섹션 (핵심 메시지) */
     .philosophy {
@@ -257,49 +256,45 @@
   <a class="nav-cta" href="https://app.malbab.com">서비스 이용</a>
 </nav>
 
-<!-- HERO -->
+<!-- HERO — 텍스트 중심, 배너 제거 -->
 <section class="hero">
   <div class="hero-wrap">
-    <div>
-      <span class="hero-tag">🏇 Data Sports</span>
-      <h1 class="hero-title">
-        경마는 <span class="accent">과학</span>이다.<br />
-        감이 아닌 <span class="accent">데이터</span>로.
-      </h1>
-      <p class="hero-desc">
-        말밥 AI 는 KRA 공공 데이터와 머신러닝으로 경주 흐름을 분석합니다.
-        도박이 아닌 <strong>스포츠</strong>로 경마를 즐기세요.
-      </p>
-      <div class="hero-actions">
-        <a class="btn-primary" href="https://app.malbab.com">서비스 둘러보기 →</a>
-      </div>
-      <p class="hero-legal">
-        본 서비스는 경마 데이터 분석·시각화를 제공하는 정보 서비스입니다.
-        마권 구매 중개나 도박을 권유하지 않습니다. 19세 미만 이용 불가.
-      </p>
+    <span class="hero-tag">🏇 Data Sports Platform</span>
+    <h1 class="hero-title">
+      경마는 <span class="accent">과학</span>이다.<br />
+      감이 아닌 <span class="accent">데이터</span>로.
+    </h1>
+    <p class="hero-desc">
+      말밥 AI 는 KRA 공공 데이터와 머신러닝으로 경주 흐름을 분석합니다.<br />
+      도박이 아닌 <strong>스포츠</strong>로, 감이 아닌 <strong>데이터</strong>로 경마를 즐기세요.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://app.malbab.com">서비스 둘러보기 →</a>
     </div>
-    <div class="hero-visual">
-      <div class="hero-img-wrap">
-        <img class="hero-img"
-             src="/hero-banner.png"
-             alt="말이 달리는 경주 장면"
-             onerror="this.src='https://app.malbab.com/landing/ChatGPT%20Image%20Apr%2022%2C%202026%2C%2003_49_26%20PM.png';this.style.objectPosition='center 55%';" />
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-label">ML 피처</div>
-            <div class="hero-stat-value">49</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-label">핵심 지표</div>
-            <div class="hero-stat-value">11</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-label">ML 모델</div>
-            <div class="hero-stat-value">3중</div>
-          </div>
-        </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-val">49</div>
+        <div class="hero-stat-label">ML 피처</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">11</div>
+        <div class="hero-stat-label">핵심 지표</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">3중</div>
+        <div class="hero-stat-label">ML 앙상블</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">KSF</div>
+        <div class="hero-stat-label">독자 속도지수</div>
       </div>
     </div>
+
+    <p class="hero-legal">
+      본 서비스는 경마 데이터 분석·시각화를 제공하는 정보 서비스입니다.
+      마권 구매 중개나 도박을 권유하지 않습니다. 19세 미만 이용 불가.
+    </p>
   </div>
 </section>
 
@@ -335,35 +330,34 @@
   </div>
 </section>
 
-<!-- 기술 -->
+<!-- 기술 — 어떻게 작동하는가 -->
 <section class="tech">
   <div class="tech-wrap">
-    <div class="eyebrow">Technology</div>
-    <h2 class="tech-title">데이터의 깊이가 <span style="color:var(--primary)">분석의 수준</span>을 만듭니다</h2>
+    <div class="eyebrow">How It Works</div>
+    <h2 class="tech-title">데이터는 <span style="color:var(--primary)">이렇게 분석</span>됩니다</h2>
     <p class="tech-desc">
-      49개 ML 피처, 독자 KSF 속도 지수, Win · Place · LambdaMART 3중 앙상블.
-      한국 경마에 최적화된 기술 스택으로 경주 흐름을 읽습니다.
+      자동화된 파이프라인이 매일 경주 데이터를 수집 · 정제 · 분석해 누구나 이해할 수 있는 리포트로 제공합니다.
     </p>
     <div class="tech-grid">
       <div class="tech-pill">
-        <div class="tech-pill-val">49</div>
-        <div class="tech-pill-label">ML 피처</div>
-        <div class="tech-pill-sub">정제된 분석 변수</div>
+        <div class="tech-pill-val">1</div>
+        <div class="tech-pill-label">수집</div>
+        <div class="tech-pill-sub">KRA 공공 데이터 · 매일 자동 갱신</div>
       </div>
       <div class="tech-pill">
-        <div class="tech-pill-val">KSF</div>
-        <div class="tech-pill-label">독자 속도 지수</div>
-        <div class="tech-pill-sub">거리·주로 보정</div>
+        <div class="tech-pill-val">2</div>
+        <div class="tech-pill-label">정제</div>
+        <div class="tech-pill-sub">49개 ML 피처 엔지니어링</div>
       </div>
       <div class="tech-pill">
-        <div class="tech-pill-val">3중</div>
-        <div class="tech-pill-label">ML 앙상블</div>
-        <div class="tech-pill-sub">Win · Place · Rank</div>
+        <div class="tech-pill-val">3</div>
+        <div class="tech-pill-label">분석</div>
+        <div class="tech-pill-sub">3중 ML 앙상블 모델링</div>
       </div>
       <div class="tech-pill">
-        <div class="tech-pill-val">2023+</div>
-        <div class="tech-pill-label">학습 데이터</div>
-        <div class="tech-pill-sub">전 경주 이력</div>
+        <div class="tech-pill-val">4</div>
+        <div class="tech-pill-label">제공</div>
+        <div class="tech-pill-sub">시각적 인사이트 리포트</div>
       </div>
     </div>
   </div>
