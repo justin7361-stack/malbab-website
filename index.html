@@ -52,13 +52,8 @@
       backdrop-filter: saturate(180%) blur(12px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo { display: inline-flex; align-items: baseline; gap: .3rem; line-height: 1; }
-    .nav-logo-word { font-size: 1.2rem; font-weight: 900; color: var(--primary); letter-spacing: -.5px; }
-    .nav-logo-ai {
-      font-size: .72rem; font-weight: 800; color: #fff;
-      background: var(--primary); padding: .15rem .4rem; border-radius: 4px;
-      letter-spacing: .5px;
-    }
+    .nav-logo { display: inline-flex; align-items: center; line-height: 1; }
+    .nav-logo img { height: 36px; width: auto; display: block; }
     .nav-cta {
       background: var(--primary); color: #fff;
       font-weight: 700; padding: .55rem 1.3rem; border-radius: 10px;
@@ -336,8 +331,7 @@
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo" aria-label="말밥 AI 홈">
-    <span class="nav-logo-word">말밥</span>
-    <span class="nav-logo-ai">AI</span>
+    <img src="/logo.svg" alt="말밥 AI" />
   </a>
   <a class="nav-cta" href="https://app.malbab.com/login">무료 가입</a>
 </nav>
