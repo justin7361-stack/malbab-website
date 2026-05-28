@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# 검색 봇 우선 안내
+Sitemap: https://malbab.com/sitemap.xml
+
+# 한국 검색 엔진 명시 허용 (Naver / Daum / Bing)
+User-agent: Yeti
+Allow: /
+
+User-agent: Daumoa
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
