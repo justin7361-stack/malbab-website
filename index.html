@@ -299,7 +299,9 @@
       display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem;
       padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    .footer-brand { font-size: 1.2rem; font-weight: 900; color: #fff; margin-bottom: .8rem; }
+    .footer-brand { display: flex; align-items: center; gap: .55rem; margin-bottom: .8rem; }
+    .footer-brand img { width: 36px; height: 36px; border-radius: 8px; display: block; }
+    .footer-brand-name { font-size: 1.2rem; font-weight: 900; color: #fff; letter-spacing: -.3px; }
     .footer-copy { font-size: .82rem; line-height: 1.7; max-width: 400px; }
     .footer-col h5 { font-size: .7rem; font-weight: 700; color: #fff; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: .8rem; }
     .footer-col a { display: block; font-size: .82rem; padding: .25rem 0; color: #94A3B8; transition: color .15s; }
@@ -341,14 +343,14 @@
   <div class="hero-wrap">
     <span class="hero-tag">📱 모바일 전문 경마 예상지 · 100% 무료 (Open Beta)</span>
     <h1 class="hero-title">
-      한국 경마 정보,<br />
-      <span class="accent">이제 한 손 안에.</span>
+      We don't <span class="accent">predict</span>.<br />
+      We <span class="accent">grade</span>.
     </h1>
     <p class="hero-desc">
       한국마사회(KRA) 가 매일 공개하는 방대한 경주 데이터를
       <strong>AI 가 자동으로 정제</strong>해서 모바일 한 화면에 정리합니다.
       출전표 · 혈통 · 기수 통산 · 구간 기록 · 한국 전용 속도 지수(KSF) ·
-      AI 예측 (Top1~3 + 복병 2마) 까지 — KRA 사이트의 여러 탭을 일일이 들락날락하지 않고,
+      AI 예측까지 — KRA 사이트의 여러 탭을 일일이 들락날락하지 않고,
       <strong>지하철에서도, 경마장에서도 한 손가락으로</strong> 모두 확인할 수 있습니다.
     </p>
     <div class="hero-actions">
@@ -660,7 +662,10 @@
   <div class="footer-wrap">
     <div class="footer-top">
       <div>
-        <div class="footer-brand">말밥 AI</div>
+        <div class="footer-brand">
+          <img src="/favicon.svg" alt="말밥 AI 로고" />
+          <span class="footer-brand-name">말밥 AI</span>
+        </div>
         <p class="footer-copy">
           한국 경마인을 위한 모바일 전문 예상지.
           KRA 공식 데이터를 AI 가 매일 자동 정제해서 한 손에 모아 드립니다.
@@ -674,8 +679,8 @@
       </div>
       <div class="footer-col">
         <h5>약관</h5>
-        <a href="/terms.html">이용 약관</a>
-        <a href="/privacy.html">개인정보 처리방침</a>
+        <a href="https://app.malbab.com/terms">이용 약관</a>
+        <a href="https://app.malbab.com/privacy">개인정보 처리방침</a>
         <a href="mailto:support@malbab.com">support@malbab.com</a>
       </div>
     </div>
