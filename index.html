@@ -13,7 +13,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="apple-touch-icon" href="/apple-icon-180.png" sizes="180x180" />
-  <meta name="keywords" content="말밥 AI, 말밥, 한국 경마, 경마 AI, 경마 예측, 경마 분석, KRA 데이터, 서울 경마, 부산 경마, 제주 경마, 출전표, 혈통 분석, 모바일 예상지, KSF 속도 지수" />
+  <meta name="keywords" content="말밥 AI, 말밥, 한국 경마, 경마 AI, 경마 예측, 경마 분석, KRA 데이터, 서울 경마, 부산 경마, 제주 경마, 영천 경마, 출전표, 혈통 분석, 모바일 예상지, KSF 속도 지수" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta property="og:site_name" content="말밥 AI" />
   <meta property="og:locale" content="ko_KR" />
@@ -96,6 +96,28 @@
     body {
       font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg); color: var(--text-1); line-height: 1.65;
+      /* [2026-08-21] 한국어 줄바꿈 규칙 — 이전엔 아무 설정이 없어 브라우저가 글자 단위로
+         끊었다. 한국어는 어절(띄어쓰기) 단위로 끊어야 읽힌다.
+           word-break: keep-all   = 단어 중간에서 자르지 않는다(한국어 핵심)
+           overflow-wrap: anywhere 대신 break-word = URL 같은 긴 토큰만 예외적으로 자른다 */
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    /* 제목은 줄 길이를 고르게(balance), 본문은 마지막 줄에 한 단어만 남는 것을 막는다(pretty).
+       두 값 모두 미지원 브라우저에서는 무시되므로 안전하다. */
+    h1, h2, h3, .philosophy-title, .section-title {
+      text-wrap: balance;
+    }
+    p, li, .philosophy-desc, .hero-sub, .pillar-desc {
+      text-wrap: pretty;
+    }
+
+    /* 강제 개행(<br>)은 넓은 화면에서만. 모바일은 이미 줄이 짧아 <br> 까지 겹치면
+       한 단어짜리 줄이 생겨 어색해진다 — 좁은 화면에선 자동 줄바꿈에 맡긴다. */
+    .br-wide { display: none; }
+    @media (min-width: 768px) {
+      .br-wide { display: inline; }
     }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; height: auto; display: block; }
@@ -415,8 +437,8 @@
 
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-val">3</div>
-        <div class="hero-stat-label">서울 · 부산 · 제주</div>
+        <div class="hero-stat-val">4</div>
+        <div class="hero-stat-label">서울 · 부산 · 제주 · 영천</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-val">KSF</div>
@@ -444,7 +466,7 @@
   <div class="philosophy-wrap">
     <div class="eyebrow">왜 말밥 AI 인가</div>
     <h2 class="philosophy-title">
-      직접 분석하기엔 데이터가 너무 많습니다.<br />
+      직접 분석하기엔 데이터가 너무 많습니다.<br class="br-wide" />
       <span class="accent">AI 가 대신 정리합니다.</span>
     </h2>
     <p class="philosophy-desc">
@@ -492,7 +514,7 @@
       경마인에게 필요한 모든 정보, <span class="accent">한 화면에</span>
     </h2>
     <p class="philosophy-desc">
-      서울 · 부산경남 · 제주 — 한국 경마 3개 경마장의 모든 경주 정보를 매주 정리합니다.
+      서울 · 부산경남 · 제주 · 영천(2026년 9월 개장) — 한국 경마 전 경마장의 모든 경주 정보를 매주 정리합니다.
       필요한 데이터는 빠짐없이, 보기 좋게.
     </p>
     <div class="pillars">
