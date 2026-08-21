@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>말밥 AI — 내손안의 경주정보 · 모바일 전문 예상지</title>
-  <meta name="description" content="한국 경마인들의 모바일 전문 예상지. KRA 공식 데이터에 매일 새벽 조교 기록까지 더해 AI 가 정제합니다. 조교 일지 116만 건 · 맞대결 이력 43만 건 · 한국 전용 속도 지수 KSF · 경주마다 사후 복기 공개." />
+  <meta name="description" content="한국 경마인들의 모바일 전문 예상지. KRA 공식 데이터에 매일 새벽 조교 기록까지 더해 AI 가 정제합니다. 조교 일지 116만 건 · 맞대결 이력 43만 건 · 한국 전용 속도 지수 KSF · 경주 주행 영상 · 예측 10만 건 사후 복기 공개." />
   <meta name="theme-color" content="#15924F" />
   <meta property="og:title" content="말밥 AI — 내손안의 경주정보 · 모바일 전문 예상지" />
-  <meta property="og:description" content="한국 경마인들의 모바일 예상지. 경주 결과만이 아니라 매일 새벽 조교까지 추적합니다 — 조교 116만 건 · 맞대결 43만 건 · KSF 속도 지수 · 사후 복기 공개." />
+  <meta property="og:description" content="한국 경마인들의 모바일 예상지. 경주 결과만이 아니라 매일 새벽 조교까지 추적합니다 — 조교 116만 건 · 맞대결 43만 건 · KSF 속도 지수 · 주행 영상 · 예측 사후 복기 공개." />
   <meta property="og:url" content="https://malbab.com" />
   <link rel="canonical" href="https://malbab.com/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -671,11 +671,13 @@
 <section class="tech">
   <div class="tech-wrap">
     <div class="eyebrow">어떻게 만들어집니까</div>
-    <h2 class="tech-title">매주 자동으로 <span style="color:var(--primary)">데이터가 갱신됩니다</span></h2>
+    <h2 class="tech-title">틀린 경주가 <span style="color:var(--primary)">다음 학습 데이터가 됩니다</span></h2>
     <p class="tech-desc">
-      자동화 파이프라인이 매주 race day 전후로 작동합니다.
-      AI 모델은 <strong>최신 경주 데이터로 주기적으로 재학습</strong>해 반영합니다 —
-      사람의 직관에 의존하지 않고, 데이터로 정확도를 개선합니다.
+      말밥 AI 는 한 번 만들어 놓고 끝나는 프로그램이 아닙니다.
+      매주 치러진 경주 결과가 그대로 <strong>다음 학습 데이터로 들어갑니다</strong> —
+      예측이 빗나간 경주일수록 모델이 배울 것이 많습니다.
+      사람의 직관이나 감이 아니라, <strong>쌓인 결과가 모델을 고쳐 나갑니다.</strong>
+      새 모델은 데이터 검증 게이트를 통과해야만 실제 서비스에 반영됩니다.
     </p>
     <div class="tech-grid">
       <div class="tech-pill">
@@ -697,6 +699,11 @@
         <div class="tech-pill-val">4</div>
         <div class="tech-pill-label">검증</div>
         <div class="tech-pill-sub">실제 결과와 비교해 적중률 그대로 공개</div>
+      </div>
+      <div class="tech-pill">
+        <div class="tech-pill-val">5</div>
+        <div class="tech-pill-label">학습</div>
+        <div class="tech-pill-sub">그 결과가 다음 모델의 학습 데이터로</div>
       </div>
     </div>
   </div>
@@ -760,10 +767,20 @@
     <div class="pillars">
       <div class="pillar">
         <div class="pillar-ico">🔍</div>
-        <div class="pillar-title">경주마다 사후 복기</div>
+        <div class="pillar-title">예측을 결과와 대조 — 10만 건</div>
         <div class="pillar-desc">
-          모든 경주가 끝나면 <strong>🔥 큰의외 · ⚡ 작은의외 · 📊 교과서</strong> 로 자동 분류하고,
+          지금까지 <strong>99,939건</strong>의 AI 예측을 실제 착순과 하나씩 맞춰 봤습니다.
+          경주가 끝나면 <strong>🔥 큰의외 · ⚡ 작은의외 · 📊 교과서</strong> 로 자동 분류하고,
           예측과 결과가 갈린 지점을 짚어 공개합니다. 결과만 덮어쓰지 않습니다.
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-ico">🎬</div>
+        <div class="pillar-title">경주 영상 바로 재생</div>
+        <div class="pillar-desc">
+          복기 화면에서 그 경주의 <strong>공식 주행 영상을 바로 볼 수 있습니다.</strong>
+          숫자만 보지 말고 실제로 어떻게 달렸는지 확인하세요 — 올해 치러진
+          <strong>1,574개 경주</strong>의 영상이 연결돼 있고, 신마의 주행심사 영상도 함께 제공합니다.
         </div>
       </div>
       <div class="pillar">
