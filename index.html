@@ -1,6 +1,39 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<script>
+/* [2026-08-27 형 지시] 이미 가입한 사용자는 랜딩을 다시 보지 않고 앱으로 바로 간다.
+ *
+ * 판정 근거 = 앱(app.malbab.com)이 심는 자문 쿠키 `malbab_li`(값 "1", 도메인 .malbab.com).
+ *   세션 쿠키 자체는 HttpOnly + __Secure-/__Host- 라 여기서 읽을 수 없다. 그래서 인증과
+ *   분리된 **불리언 1비트**만 본다(개인정보 0). 위조돼도 앱이 진짜 세션을 재검증하므로
+ *   얻는 것은 "앱으로 이동" 뿐이다. 이 값을 권한 판단에 쓰지 않는다.
+ *   선례: GitLab gitlab_user · Auth0 is.authenticated · Vercel isLoggedIn · Linear loggedIn
+ *
+ * SEO: 크롤러는 쿠키를 페이지 로드 간 유지하지 않아(구글 공식) 이 분기에 절대 걸리지 않는다.
+ *   모두에게 같은 HTML 을 보내므로 클로킹이 아니다. 8월 검색유입 0 사고(로그인 강제)의
+ *   재발을 막기 위해 **봇 판정(UA 스니핑)은 쓰지 않는다** — 쿠키 유무가 이미 완벽한 분기다.
+ *
+ * 안전장치 3중 (오탐 시 갇히지 않게):
+ *   ① 루트에서만 — 약관·개인정보 등 직접 링크는 그대로 보인다
+ *   ② 세션당 1회 — 앱이 되돌려보내도 무한 왕복이 안 된다
+ *   ③ ?stay=1 — 로그인 상태에서도 랜딩을 보고 싶을 때의 탈출구
+ * iOS 홈화면 앱은 Safari 와 쿠키가 분리된다 → 힌트가 없어 그냥 랜딩이 보인다(안전한 실패).
+ */
+(function () {
+  try {
+    var li = document.cookie.split('; ').some(function (c) { return c === 'malbab_li=1' });
+    document.documentElement.setAttribute('data-li', li ? '1' : '0');
+    if (li &&
+        location.pathname === '/' &&
+        location.search.indexOf('stay=1') === -1 &&
+        !sessionStorage.getItem('mb_sent')) {
+      sessionStorage.setItem('mb_sent', '1');
+      location.replace('https://app.malbab.com/');   // replace = 뒤로가기 루프 방지
+    }
+  } catch (e) { /* 쿠키·스토리지 차단 환경 = 그냥 랜딩을 보여준다 */ }
+})();
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>말밥 AI — 내손안의 경주정보 · 모바일 전문 예상지</title>
@@ -139,6 +172,11 @@
       font-size: .875rem; transition: opacity .15s;
     }
     .nav-cta:hover { opacity: .9; }
+    /* [2026-08-27] 로그인 힌트에 따른 CTA 교체. 기본(속성 없음)=게스트 → 크롤러·JS 차단
+       환경에서도 항상 가입 동선이 보인다. */
+    .cta-user { display: none; }
+    html[data-li="1"] .cta-user { display: inline-block; }
+    html[data-li="1"] .cta-guest { display: none; }
 
     /* HERO — 텍스트 중심, 이미지 제거 */
     .hero {
@@ -413,7 +451,8 @@
   <a href="/" class="nav-logo" aria-label="말밥 AI 홈">
     <img src="/logo.svg" alt="말밥 AI" />
   </a>
-  <a class="nav-cta" href="https://app.malbab.com/login">무료 가입</a>
+  <a class="nav-cta cta-guest" href="https://app.malbab.com/login">무료 가입</a>
+  <a class="nav-cta cta-user" href="https://app.malbab.com/">말밥 열기 →</a>
 </nav>
 
 <!-- HERO — 친절한 도입 + 핵심 가치 -->
