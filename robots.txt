@@ -16,3 +16,17 @@ Allow: /
 
 User-agent: Googlebot
 Allow: /
+
+# AI assistants: service summary lives at https://malbab.com/llms.txt
+# (llms.txt is a well-known path, not a robots.txt directive)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
