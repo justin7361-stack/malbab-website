@@ -29,9 +29,48 @@
         location.search.indexOf('stay=1') === -1 &&
         !sessionStorage.getItem('mb_sent')) {
       sessionStorage.setItem('mb_sent', '1');
-      location.replace('https://app.malbab.com/');   // replace = 뒤로가기 루프 방지
+      // [2026-09-04] 광고 파라미터를 앱까지 넘긴다 — 쿠키가 막힌 환경의 이중 안전.
+      location.replace('https://app.malbab.com/' + (location.search || ''));   // replace = 뒤로가기 루프 방지
     }
   } catch (e) { /* 쿠키·스토리지 차단 환경 = 그냥 랜딩을 보여준다 */ }
+})();
+</script>
+<script>
+/* [2026-09-04 형 지시] 유입 경로 기록 — **랜딩이 먼저 본다.**
+ *
+ * 왜 여기에도 필요한가: 계측은 9/2 에 앱(app.malbab.com)에만 붙였는데, 광고는
+ * malbab.com 에 떨어진다. 그러면 앱이 나중에 보는 referrer 는 우리 자신인
+ * `malbab.com/` 뿐이고 진짜 출처(네이버·카카오)는 그 사이에서 사라진다.
+ * 그래서 광고 클릭을 **가장 먼저 보는 쪽**이 적어둔다.
+ *
+ * 쿠키 도메인 = `.malbab.com` — 두 사이트가 같은 값을 읽어야 한다.
+ * host-only 로 두면 랜딩에서 적은 것을 앱이 못 읽는다(앞 판의 실제 결함).
+ * 선례: 바로 위 `malbab_li` 가 같은 방식으로 두 사이트를 오간다.
+ *
+ * **첫 값만 남긴다.** 검색으로 들어와 며칠 뒤 가입해도 획득 경로는 그 검색이다.
+ * 개인정보는 담지 않는다 — referrer 의 host+path, utm_*, 첫 경로, 날짜뿐.
+ */
+(function () {
+  try {
+    if (document.cookie.split('; ').some(function (c) { return c.indexOf('mb_src=') === 0 })) return;
+    var q = new URLSearchParams(location.search), utm = {}, k, v;
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function (n) {
+      v = q.get(n); if (v) utm[n.slice(4)] = v.slice(0, 60);
+    });
+    var ref = '';
+    if (document.referrer) {
+      try {
+        var u = new URL(document.referrer);
+        /* 우리 두 사이트 사이의 이동은 유입이 아니다 */
+        if (!/(^|\.)malbab\.com$/.test(u.host)) ref = (u.host + u.pathname).slice(0, 120);
+      } catch (e) {}
+    }
+    var payload = { ref: ref, landing: location.pathname.slice(0, 80),
+                    at: new Date().toISOString().slice(0, 10) };
+    for (k in utm) payload[k] = utm[k];
+    document.cookie = 'mb_src=' + encodeURIComponent(JSON.stringify(payload)).slice(0, 900) +
+      '; path=/; domain=.malbab.com; max-age=' + (60 * 60 * 24 * 90) + '; SameSite=Lax; Secure';
+  } catch (e) { /* 쿠키 차단 환경 = 계측만 없다. 화면은 멀쩡하다 */ }
 })();
 </script>
   <meta charset="UTF-8" />
