@@ -17,16 +17,48 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
-# AI assistants: service summary lives at https://malbab.com/llms.txt
+# AI assistants: summary at https://malbab.com/llms.txt · full text at https://malbab.com/llms-full.txt
 # (llms.txt is a well-known path, not a robots.txt directive)
+# [2026-09-06] 앱(app.malbab.com)과 목록을 맞춘다. 랜딩만 4종이라 비대칭이었다.
+#   `User-agent: *  Allow: /` 로 이미 전부 허용되므로 **동작은 안 바뀐다** —
+#   이름을 적는 건 크롤 유도 신호이자, 나중에 `*` 를 조일 때의 안전판이다.
 User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# 사용자가 ChatGPT 에게 "이 페이지 봐줘" 했을 때 붙는 UA
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
+# 사용자가 클로드에게 "이 페이지 봐줘" 했을 때 붙는 UA
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
 User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
