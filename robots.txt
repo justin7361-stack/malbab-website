@@ -32,6 +32,13 @@ Allow: /
 User-agent: GPTBot
 Disallow: /
 
+# [2026-09-09 형 추가 지시] Meta 도 크롤러가 둘이다 —
+#   meta-externalagent   = 모델 학습·제품 개선용   (막는다)
+#   meta-externalfetcher = 사용자가 링크를 열어 달라고 했을 때 (안 막는다)
+#   계측: 9/8 67건 · 9/9 153건으로 결정 시점에 한창 훑는 중이었다.
+User-agent: meta-externalagent
+Disallow: /
+
 User-agent: OAI-SearchBot
 Allow: /
 
