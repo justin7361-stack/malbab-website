@@ -22,8 +22,15 @@ Allow: /
 # [2026-09-06] 앱(app.malbab.com)과 목록을 맞춘다. 랜딩만 4종이라 비대칭이었다.
 #   `User-agent: *  Allow: /` 로 이미 전부 허용되므로 **동작은 안 바뀐다** —
 #   이름을 적는 건 크롤 유도 신호이자, 나중에 `*` 를 조일 때의 안전판이다.
+# [2026-09-09 형 결정] "GPTBot 차단하고 OAI-SearchBot은 열어둬"
+#   같은 OpenAI 봇이라도 하는 일이 다르다 —
+#     GPTBot        = 학습 데이터 수집. 트래픽도 출처 표기도 안 돌아온다.
+#     OAI-SearchBot = ChatGPT 검색 인덱스. 답변에 우리가 인용되는 경로다.
+#     ChatGPT-User  = 사용자가 "이 페이지 봐줘" 한 것. 실사용자다.
+#   앱 계측 실측(2026-09-07 하루): GPTBot 5,405건 vs ChatGPT-User 2건.
+#   그래서 학습만 막고 검색·사용자 경로는 연다. 앱(app.malbab.com)과 같은 정책이다.
 User-agent: GPTBot
-Allow: /
+Disallow: /
 
 User-agent: OAI-SearchBot
 Allow: /
