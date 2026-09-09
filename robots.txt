@@ -47,7 +47,7 @@ User-agent: ChatGPT-User
 Allow: /
 
 User-agent: ClaudeBot
-Allow: /
+Disallow: /
 
 # 사용자가 클로드에게 "이 페이지 봐줘" 했을 때 붙는 UA
 User-agent: Claude-User
@@ -57,7 +57,7 @@ User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: anthropic-ai
-Allow: /
+Disallow: /
 
 User-agent: PerplexityBot
 Allow: /
@@ -66,13 +66,24 @@ User-agent: Perplexity-User
 Allow: /
 
 User-agent: Google-Extended
-Allow: /
+Disallow: /
 
 User-agent: GoogleOther
-Allow: /
+Disallow: /
 
 User-agent: CCBot
-Allow: /
+Disallow: /
 
 User-agent: Applebot-Extended
-Allow: /
+Disallow: /
+
+# [2026-09-09 형] "위에 2번 봇들은 필요 없으면 다 막아"
+#   학습/데이터 판매 전용이라 인용 경로가 없다.
+User-agent: Bytespider
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
