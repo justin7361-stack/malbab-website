@@ -323,6 +323,11 @@
       margin-bottom: .8rem; font-size: 1.2rem;
     }
     .pillar-title { font-size: 1rem; font-weight: 800; color: var(--text-1); margin-bottom: .4rem; }
+    /* [2026-09-21] 공개 화면 직행 링크 — 전역 `a` 가 color:inherit·밑줄 없음이라
+       링크인지 알 수 없었다. 누를 수 있다는 표시를 준다. */
+    .pillar-title a { color: var(--primary); text-decoration: underline;
+                      text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    .pillar-title a:hover { text-decoration-thickness: 2px; }
     .pillar-desc { font-size: .875rem; color: var(--text-2); line-height: 1.7; }
 
     /* KSF 전용 섹션 (강조) */
@@ -883,6 +888,74 @@
   </div>
 </section>
 
+<!--
+  [2026-09-21] 공개 페이지 직행 링크.
+
+  왜 넣나: Search Console 실측 — `app.malbab.com/ranking` 이 "발견됨 · 색인되지 않음"
+  이고 **Last crawl N/A**(한 번도 안 가져감), 게다가 "Referring page: None detected" 였다.
+  앱 안에는 링크가 있지만(홈 4개·기수 페이지 2개) 구글이 앱을 14일에 36번밖에 안 돌아서
+  그 링크 관계를 못 본다. 랜딩은 이미 색인된 도메인이니 **여기서 출발하는 링크**가
+  크롤러가 앱 속으로 들어가는 제일 빠른 길이다.
+
+  🚨 SEO 용 링크 더미가 아니다 — 전부 **로그인 없이 열리는 화면**이고, 사람이 눌러도
+     쓸모 있는 것만 넣는다. 로그인 벽이 있는 화면(예측·복기)은 여기 넣지 않는다.
+-->
+<section class="philosophy" style="background:var(--surface);border-top:1px solid var(--border)">
+  <div class="philosophy-wrap">
+    <div class="eyebrow">가입 없이</div>
+    <h2 class="philosophy-title">
+      먼저 <span class="accent">숫자부터 보고</span> 결정하세요
+    </h2>
+    <p class="philosophy-desc">
+      아래 화면은 <strong>로그인 없이</strong> 바로 열립니다. 한국마사회 공식 데이터를
+      저희가 매일 수집해 정리한 것입니다.
+    </p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-ico">🏆</div>
+        <div class="pillar-title">
+          <a href="https://app.malbab.com/ranking">기수 · 조교사 · 마주 랭킹</a>
+        </div>
+        <div class="pillar-desc">
+          승률 · 복승률 · 상금을 주간 단위로 정리했습니다. 이름을 누르면 그 사람의
+          통산 전적과 최근 경주가 나옵니다.
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-ico">🏇</div>
+        <div class="pillar-title">
+          <a href="https://app.malbab.com/jockeys">기수 전적</a> ·
+          <a href="https://app.malbab.com/trainers">조교사 전적</a>
+        </div>
+        <div class="pillar-desc">
+          현역 기수 · 조교사의 한국마사회 공표 통산 기록과 최근 1년 성적입니다.
+          사진과 데뷔일, 경마장별 성적까지 한 장에 있습니다.
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-ico">🐎</div>
+        <div class="pillar-title">
+          <a href="https://app.malbab.com/horses">경주마 검색</a>
+        </div>
+        <div class="pillar-desc">
+          말 이름으로 찾으면 혈통 · 거리별 성적 · 최근 경주가 나옵니다.
+          지금까지 수집한 모든 현역마가 들어 있습니다.
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-ico">📖</div>
+        <div class="pillar-title">
+          <a href="https://app.malbab.com/glossary">경마 용어 사전</a>
+        </div>
+        <div class="pillar-desc">
+          부담중량 · 복승식 · 견습기수 감량처럼 처음 보면 막히는 말들을
+          짧게 풀어 뒀습니다. 경마를 처음 보는 분이 먼저 볼 화면입니다.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-band">
   <h2>지금 무료로 시작해보세요</h2>
@@ -907,6 +980,11 @@
       <div class="footer-col">
         <h5>서비스</h5>
         <a href="https://app.malbab.com">웹 서비스</a>
+        <a href="https://app.malbab.com/ranking">랭킹</a>
+        <a href="https://app.malbab.com/jockeys">기수</a>
+        <a href="https://app.malbab.com/trainers">조교사</a>
+        <a href="https://app.malbab.com/horses">경주마</a>
+        <a href="https://app.malbab.com/glossary">경마 용어</a>
         <a href="https://app.malbab.com/community">커뮤니티</a>
         <a href="https://app.malbab.com/install">앱 설치 방법</a>
       </div>
