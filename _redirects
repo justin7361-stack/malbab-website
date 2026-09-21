@@ -1,3 +1,25 @@
 # 옛 확장자 주소 -> 실제 경로. 목적지가 실제 파일이라 되돌아오지 않는다.
 /terms.html    /terms/    301
 /privacy.html  /privacy/  301
+
+# ── 쇼츠 아웃트로가 띄우는 짧은 주소 (2026-09-21) ──
+#
+# 인물 카드 영상의 마지막 장면은 `malbab.com/jockeys/42` 를 크게 띄운다. 그런데 그
+# 주소가 **404 였다** — 실제 페이지는 app.malbab.com 에 있고 랜딩엔 그 경로가 없다.
+# 9/18 에 올린 24편(서승운·malbab.com/jockeys/88)부터 그랬다. 영상은 이미 나갔으니
+# 문구를 고치는 것으로는 그 편을 못 살린다. 주소 쪽을 살린다.
+#
+# 🚨 무한 리다이렉트 주의(2026-08-27 약관·개인정보 사고): 목적지가 **다른 호스트**라
+#    이 규칙이 자기 자신을 다시 부를 수 없다. 위 두 줄과 달리 같은 사이트로 돌지 않는다.
+# 301 인 이유: 주소가 영구히 저기로 옮겨간 것이 맞고, 검색엔진이 링크 가치를 앱으로 넘긴다.
+/jockeys/*   https://app.malbab.com/jockeys/:splat   301
+/trainers/*  https://app.malbab.com/trainers/:splat  301
+/owners/*    https://app.malbab.com/owners/:splat    301
+/horses/*    https://app.malbab.com/horses/:splat    301
+/ranking     https://app.malbab.com/ranking          301
+# 목록 주소도 같이 — `/jockeys/*` 는 슬래시 뒤에 뭔가 있어야 걸린다.
+/jockeys     https://app.malbab.com/jockeys          301
+/trainers    https://app.malbab.com/trainers         301
+/owners      https://app.malbab.com/owners           301
+/horses      https://app.malbab.com/horses           301
+/glossary    https://app.malbab.com/glossary         301
