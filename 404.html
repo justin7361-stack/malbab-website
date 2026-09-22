@@ -7,9 +7,10 @@
   <meta name="robots" content="noindex, follow" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <!-- [2026-09-22 형 결정] 폰트를 앱(app.malbab.com)과 같은 Pretendard 로 통일 — 두 사이트가 한 서비스로 보이게.
+       dynamic subset = 화면에 쓰는 글자 조각만 받는다(앱 실측: 단일 2.06MB → 한 화면 약 0.28MB). -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <style>
     :root {
       --primary:      #15924F;
@@ -21,11 +22,11 @@
       --text-muted:   #94A3B8;
       --border:       #E2E8F0;
       --shadow:       0 10px 30px rgba(15,23,42,.08);
-      --radius:       16px;
+      --radius:       12px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg); color: var(--text-1); line-height: 1.65;
       min-height: 100vh; display: flex; align-items: center; justify-content: center;
       padding: 24px; text-align: center;
