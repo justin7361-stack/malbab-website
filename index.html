@@ -902,8 +902,11 @@
       grid.innerHTML = items.map(function (v) {
         var dt = new Date(v.published_at);
         var date = isNaN(dt) ? '' : dt.getFullYear() + '.' + String(dt.getMonth() + 1).padStart(2, '0') + '.' + String(dt.getDate()).padStart(2, '0');
+        /* 🚨 썸네일은 우리 서버를 거친다 — `i.ytimg.com` 을 브라우저가 직접 못 받는 망이 있다
+           (2026-09-23 실측: 랜딩에서 naturalWidth 0). 실패하면 제목만 남는다. */
+        var thumb = API + (v.thumb_proxy || ('/api/channel/thumb/' + v.video_id));
         return '<a class="video-card" href="' + v.url + '" target="_blank" rel="noopener">' +
-          '<div class="video-thumb"><img loading="lazy" alt="" src="' + v.thumbnail + '">' +
+          '<div class="video-thumb"><img loading="lazy" alt="" src="' + thumb + '" onerror="this.style.display='none'">' +
           '<div class="video-play"><span>▶</span></div></div>' +
           '<div class="video-body"><div class="video-title"></div><div class="video-date">' + date + '</div></div></a>';
       }).join('');
