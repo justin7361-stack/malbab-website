@@ -437,6 +437,30 @@
     }
     .tech-pill-sub { font-size: .78rem; color: var(--text-2); margin-top: .4rem; line-height: 1.5; }
 
+    /* 최근 영상 (2026-09-23) — 글만 아홉 섹션이라 '실물'이 한 번도 안 나왔다.
+       우리가 만든 것을 그대로 보여 주는 자리. 목록은 백엔드가 유튜브 RSS 를 읽어 준다. */
+    .videos { padding: 72px 5vw; background: var(--bg-2, #F6F8F7); }
+    .videos-wrap { max-width: 1100px; margin: 0 auto; }
+    .videos-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.6rem; flex-wrap: wrap; }
+    .videos-head h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 900; letter-spacing: -.5px; }
+    .videos-head a { color: var(--primary); font-weight: 700; font-size: .95rem; }
+    .videos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.1rem; }
+    .video-card { background: #fff; border: 1px solid var(--border, #E2E8F0); border-radius: 12px; overflow: hidden; display: block; transition: transform .15s, box-shadow .15s; }
+    .video-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(15,31,26,.10); }
+    .video-thumb { position: relative; aspect-ratio: 16/9; background: #0F1F1A; }
+    .video-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .video-play {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,.22);
+    }
+    .video-play span {
+      width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,.92);
+      display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.1rem;
+    }
+    .video-body { padding: .95rem 1rem 1.1rem; }
+    .video-title { font-size: .95rem; font-weight: 700; line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .video-date { margin-top: .45rem; font-size: .8rem; color: var(--text-2); }
+
     /* CTA */
     .cta-band {
       background: linear-gradient(135deg, var(--primary) 0%, #115E36 100%);
@@ -961,6 +985,17 @@
   </div>
 </section>
 
+<!-- 최근 영상 (2026-09-23 형 지시) — 목록이 비면 섹션 자체가 안 보인다(JS 가 지운다) -->
+<section class="videos" id="videos" hidden>
+  <div class="videos-wrap">
+    <div class="videos-head">
+      <h2>최근 영상</h2>
+      <a href="https://www.youtube.com/@malbab_ai" target="_blank" rel="noopener">채널 전체 보기 →</a>
+    </div>
+    <div class="videos-grid" id="videos-grid"></div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-band">
   <h2>지금 무료로 시작해보세요</h2>
@@ -1016,5 +1051,34 @@
   </div>
 </footer>
 
+<script>
+  /* 최근 영상 — 백엔드가 유튜브 RSS 를 읽어 준다(앱 /videos 와 같은 endpoint, 단일 소스).
+     실패하면 섹션을 그대로 숨긴 채 둔다 — 빈 칸이나 오류 문구를 내지 않는다. */
+  (async function () {
+    var API = 'https://dark-horse-backend-production.up.railway.app';
+    try {
+      var r = await fetch(API + '/api/channel/videos?limit=6');
+      if (!r.ok) return;
+      var d = await r.json();
+      var items = (d && d.items) || [];
+      if (!items.length) return;
+      var grid = document.getElementById('videos-grid');
+      grid.innerHTML = items.map(function (v) {
+        var dt = new Date(v.published_at);
+        var date = isNaN(dt) ? '' : dt.getFullYear() + '.' + String(dt.getMonth() + 1).padStart(2, '0') + '.' + String(dt.getDate()).padStart(2, '0');
+        return '<a class="video-card" href="' + v.url + '" target="_blank" rel="noopener">' +
+          '<div class="video-thumb"><img loading="lazy" alt="" src="' + v.thumbnail + '">' +
+          '<div class="video-play"><span>▶</span></div></div>' +
+          '<div class="video-body"><div class="video-title"></div><div class="video-date">' + date + '</div></div></a>';
+      }).join('');
+      /* 제목은 텍스트로 넣는다(HTML 주입 금지) */
+      items.forEach(function (v, i) {
+        var el = grid.querySelectorAll('.video-title')[i];
+        if (el) el.textContent = v.title;
+      });
+      document.getElementById('videos').hidden = false;
+    } catch (e) { /* 조용히 숨긴 채로 둔다 */ }
+  })();
+</script>
 </body>
 </html>
