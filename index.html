@@ -633,6 +633,46 @@
   </div>
 </section>
 
+<!-- [2026-09-24 UI/UX 평가 · 형 "다 진행해"] 검증 카드를 히어로 바로 아래로 — 모바일 랜딩이 약 10화면(8,071px)인데
+     가장 강한 증거(지난 경마일 AI 순위 vs 실제)가 3,800px 지점에 있었다. 모토 다음에 곧바로 증명한다. -->
+<!-- 검증 — 기존 '적중률 자랑은 쉽습니다' 섹션 + 지난 경마일 **실제 기록** (2026-09-23)
+     형: *"증거 카드는 자동으로 갈아끼워"*. 목록은 백엔드가 고른다(`/api/channel/proof`):
+     ①1·2·3착이 전부 우리 5두 안인 경주 우선 ②그 중 1착 배당 최대 ③없으면 1착만 맞은 것
+     ④그것도 없으면 카드가 통째로 안 나온다(빈 칸·변명 없음). -->
+<section class="philosophy">
+  <div class="philosophy-wrap">
+    <div class="eyebrow">검증</div>
+    <h2 class="philosophy-title">
+      적중률 자랑은 쉽습니다. <span class="accent">틀린 걸 보여주는 게 어렵죠</span>
+    </h2>
+    <p class="philosophy-desc">
+      말밥 AI 는 경주가 끝날 때마다 <strong>예측이 어디서 왜 빗나갔는지</strong>를 같은 화면에 남깁니다.
+      아래는 지난 경마일의 실제 기록입니다 — 경마일마다 자동으로 바뀝니다.
+    </p>
+
+    <div class="proof-card" id="proof" hidden>
+      <div class="proof-head">
+        <span class="proof-when" id="proof-when"></span>
+        <span class="proof-tag" id="proof-tag"></span>
+      </div>
+      <div class="proof-grid">
+        <div class="proof-col proof-ours">
+          <h3>말밥 AI 등급 <em>경주 전</em></h3>
+          <ul id="proof-top5"></ul>
+        </div>
+        <div class="proof-col">
+          <h3>결과 <em>확정 단승배당</em></h3>
+          <ul id="proof-result"></ul>
+        </div>
+      </div>
+      <p class="proof-note">
+        한 경주의 기록입니다. 주간 성적 전체는
+        <a href="https://app.malbab.com/reports">리포트</a>에서 그대로 공개합니다.
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- 숫자 — 오늘 기준 실제 보유량. 값은 DB 실측(2026-09-23). -->
 <section class="stats-band">
   <div class="stats-wrap">
@@ -692,44 +732,6 @@
     </div>
   </div>
 </section>
-<!-- 검증 — 기존 '적중률 자랑은 쉽습니다' 섹션 + 지난 경마일 **실제 기록** (2026-09-23)
-     형: *"증거 카드는 자동으로 갈아끼워"*. 목록은 백엔드가 고른다(`/api/channel/proof`):
-     ①1·2·3착이 전부 우리 5두 안인 경주 우선 ②그 중 1착 배당 최대 ③없으면 1착만 맞은 것
-     ④그것도 없으면 카드가 통째로 안 나온다(빈 칸·변명 없음). -->
-<section class="philosophy">
-  <div class="philosophy-wrap">
-    <div class="eyebrow">검증</div>
-    <h2 class="philosophy-title">
-      적중률 자랑은 쉽습니다. <span class="accent">틀린 걸 보여주는 게 어렵죠</span>
-    </h2>
-    <p class="philosophy-desc">
-      말밥 AI 는 경주가 끝날 때마다 <strong>예측이 어디서 왜 빗나갔는지</strong>를 같은 화면에 남깁니다.
-      아래는 지난 경마일의 실제 기록입니다 — 경마일마다 자동으로 바뀝니다.
-    </p>
-
-    <div class="proof-card" id="proof" hidden>
-      <div class="proof-head">
-        <span class="proof-when" id="proof-when"></span>
-        <span class="proof-tag" id="proof-tag"></span>
-      </div>
-      <div class="proof-grid">
-        <div class="proof-col proof-ours">
-          <h3>말밥 AI 등급 <em>경주 전</em></h3>
-          <ul id="proof-top5"></ul>
-        </div>
-        <div class="proof-col">
-          <h3>결과 <em>확정 단승배당</em></h3>
-          <ul id="proof-result"></ul>
-        </div>
-      </div>
-      <p class="proof-note">
-        한 경주의 기록입니다. 주간 성적 전체는
-        <a href="https://app.malbab.com/reports">리포트</a>에서 그대로 공개합니다.
-      </p>
-    </div>
-  </div>
-</section>
-
 <section class="tech">
   <div class="tech-wrap">
     <div class="eyebrow">어떻게 만들어집니까</div>
