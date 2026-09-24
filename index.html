@@ -573,7 +573,10 @@
     <img src="/logo.svg" alt="말밥 AI" />
   </a>
   <a class="nav-cta cta-guest" href="https://app.malbab.com/login">무료 가입</a>
-  <a class="nav-cta cta-user" href="https://app.malbab.com/">말밥 열기 →</a>
+  <!-- [2026-09-24] '말밥 열기' 도 /login 으로 간다. 앱 루트는 세션 쿠키가 없으면 여기(랜딩)로 되돌린다 —
+       로그인 힌트(malbab_li)만 남고 세션이 끊긴 사람은 이 버튼 하나만 보이는데(가입 버튼은 숨음) 누르면
+       랜딩으로 돌아와 빠져나갈 길이 없었다. /login 은 로그인돼 있으면 곧장 앱 홈으로 넘긴다. -->
+  <a class="nav-cta cta-user" href="https://app.malbab.com/login">말밥 열기 →</a>
 </nav>
 
 <!-- HERO — 친절한 도입 + 핵심 가치 -->
