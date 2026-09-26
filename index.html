@@ -291,8 +291,22 @@
       font-weight: 600; margin-top: .6rem;
     }
 
+    .hero-sub {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem); color: var(--text-1); font-weight: 700;
+      line-height: 1.5; margin: -0.6rem 0 1.4rem;
+    }
+    .hero-sub strong { color: var(--primary); font-weight: 900; }
+    .hero-free { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: 1rem; }
+    .hero-free-label { font-size: .85rem; font-weight: 700; color: var(--text-2); margin-right: .2rem; }
+    .hero-free a {
+      display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem;
+      border: 1px solid var(--primary); border-radius: 99px; background: var(--surface);
+      color: var(--primary); font-weight: 700; font-size: .95rem;
+    }
+    .hero-free a:hover { background: var(--primary-soft); }
+    /* [2026-09-26 UI/UX 재평가 H5] 법적 고지 글자가 #94A3B8(대비 약 2.6:1) — 읽혀야 하는 고지라 본문 보조색으로. */
     .hero-legal {
-      margin-top: 2rem; font-size: .72rem; color: var(--text-muted);
+      margin-top: 2rem; font-size: .72rem; color: var(--text-2);
       max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.6;
     }
 
@@ -592,6 +606,8 @@
         We don't <span class="accent">predict</span>.<br />
         We <span class="accent">grade</span>.
       </h1>
+      <!-- [2026-09-26 UI/UX 재평가 H5] 영문 모토만으로는 40~60대에게 약속이 안 읽힌다 — 굵은 한국어 한 줄. -->
+      <p class="hero-sub">맞히겠다고 하지 않습니다. <strong>등급을 매기고, 결과로 보여줍니다.</strong></p>
       <p class="hero-desc">
         착순표만 보면 <strong>절반만 본 것</strong>입니다.
         말밥 AI 는 그 말이 <strong>어제 새벽 어떻게 준비했는지</strong>까지 봅니다.
@@ -599,6 +615,14 @@
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="https://app.malbab.com/login">1초 가입 · 무료로 시작 →</a>
+      </div>
+      <!-- [2026-09-26 UI/UX 재평가 H5] '가입 없이 먼저 숫자부터' 가 폰 8,050px 랜딩의 65% 지점(≈5,300px)에 있었다.
+           첫 화면에서 바로 열 수 있는 공개 화면 셋. 아래 '가입 없이' 섹션은 설명으로 남긴다. -->
+      <div class="hero-free" role="navigation" aria-label="가입 없이 보기">
+        <span class="hero-free-label">가입 없이 보기</span>
+        <a href="https://app.malbab.com/ranking">랭킹</a>
+        <a href="https://app.malbab.com/reports">경주 복기</a>
+        <a href="https://app.malbab.com/horses">경주마</a>
       </div>
       <p class="hero-legal">
         카카오·구글 1초 가입 · 만 19세 이상 · 본 서비스는 경마 데이터 분석·시각화 정보 서비스이며
