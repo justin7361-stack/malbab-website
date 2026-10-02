@@ -258,6 +258,8 @@
     }
     .hero-desc strong { color: var(--primary); font-weight: 800; }
     .hero-actions { display: flex; gap: .8rem; align-items: center; flex-wrap: wrap; justify-content: center; }
+    /* [2026-10-03] 설치가 안 되는 곳(카톡 안 브라우저·PC)을 위한 작은 갈래 — 주 버튼은 '앱 설치하기' */
+    .hero-web { font-size: .85rem; color: #4b5563; text-decoration: underline; }
     .btn-primary {
       background: var(--primary); color: #fff;
       font-weight: 700; padding: 1rem 2rem; border-radius: 12px;
@@ -586,7 +588,8 @@
   <a href="/" class="nav-logo" aria-label="말밥 AI 홈">
     <img src="/logo.svg" alt="말밥 AI" />
   </a>
-  <a class="nav-cta cta-guest" href="https://app.malbab.com/login">무료 가입</a>
+  <!-- [2026-10-03 형 "더비온처럼 — 다운로드(설치) 먼저, 앱을 열면 로그인"] 게스트 버튼은 설치 페이지로. -->
+  <a class="nav-cta cta-guest" href="https://app.malbab.com/install">앱 설치</a>
   <!-- [2026-09-24] '말밥 열기' 도 /login 으로 간다. 앱 루트는 세션 쿠키가 없으면 여기(랜딩)로 되돌린다 —
        로그인 힌트(malbab_li)만 남고 세션이 끊긴 사람은 이 버튼 하나만 보이는데(가입 버튼은 숨음) 누르면
        랜딩으로 돌아와 빠져나갈 길이 없었다. /login 은 로그인돼 있으면 곧장 앱 홈으로 넘긴다. -->
@@ -614,7 +617,8 @@
         KRA 의 탭 열 개를 오갈 필요 없이, <strong>지하철에서도 경마장에서도 한 손에.</strong>
       </p>
       <div class="hero-actions">
-        <a class="btn-primary" href="https://app.malbab.com/login">1초 가입 · 무료로 시작 →</a>
+        <a class="btn-primary" href="https://app.malbab.com/install">📲 앱 설치하기 · 무료 →</a>
+        <a class="hero-web" href="https://app.malbab.com/login">웹에서 바로 시작</a>
       </div>
       <!-- [2026-09-26 UI/UX 재평가 H5] '가입 없이 먼저 숫자부터' 가 폰 8,050px 랜딩의 65% 지점(≈5,300px)에 있었다.
            첫 화면에서 바로 열 수 있는 공개 화면 셋. 아래 '가입 없이' 섹션은 설명으로 남긴다. -->
@@ -865,7 +869,7 @@
 <section class="cta-band">
   <h2>지금 무료로 시작해보세요</h2>
   <p>오픈베타 기간 100% 무료 · 카카오 또는 구글 계정으로 1초 가입 · 만 19세 이상 이용 가능</p>
-  <a class="btn-white" href="https://app.malbab.com/login">무료로 가입하기 →</a>
+  <a class="btn-white" href="https://app.malbab.com/install">📲 앱 설치하기 →</a>
 </section>
 
 <!-- FOOTER -->
