@@ -51,6 +51,13 @@
  * 개인정보는 담지 않는다 — referrer 의 host+path, utm_*, 첫 경로, 날짜뿐.
  */
 (function () {
+  /* [2026-10-13] 친구 초대 — 초대 링크(?inv=코드)는 마지막 값을 30일 남긴다(mb_src 는 첫 값). 앱 가입 때 읽는다. */
+  try {
+    var inv = new URLSearchParams(location.search).get('inv');
+    if (inv && /^[A-Za-z0-9]{4,12}$/.test(inv)) {
+      document.cookie = 'mb_inv=' + inv.toUpperCase() + '; path=/; domain=.malbab.com; max-age=' + (60 * 60 * 24 * 30) + '; SameSite=Lax; Secure';
+    }
+  } catch (e) { /* 쿠키 차단 — 초대 연결만 없다 */ }
   try {
     if (document.cookie.split('; ').some(function (c) { return c.indexOf('mb_src=') === 0 })) return;
     var q = new URLSearchParams(location.search), utm = {}, k, v;
