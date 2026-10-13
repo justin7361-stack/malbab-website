@@ -54,7 +54,9 @@
   /* [2026-10-13] 친구 초대 — 초대 링크(?inv=코드)는 마지막 값을 30일 남긴다(mb_src 는 첫 값). 앱 가입 때 읽는다. */
   try {
     var inv = new URLSearchParams(location.search).get('inv');
-    if (inv && /^[A-Za-z0-9]{4,12}$/.test(inv)) {
+    /* 이 브라우저에서 회원이 로그인한 적 있으면(mb_member · malbab_li) 초대로 세지 않는다 — 자기 초대 방지 */
+    var member = document.cookie.split('; ').some(function (c) { return c === 'mb_member=1' || c === 'malbab_li=1' });
+    if (inv && !member && /^[A-Za-z0-9]{4,12}$/.test(inv)) {
       document.cookie = 'mb_inv=' + inv.toUpperCase() + '; path=/; domain=.malbab.com; max-age=' + (60 * 60 * 24 * 30) + '; SameSite=Lax; Secure';
     }
   } catch (e) { /* 쿠키 차단 — 초대 연결만 없다 */ }
