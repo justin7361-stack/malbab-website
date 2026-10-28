@@ -23,3 +23,6 @@
 /owners      https://app.malbab.com/owners           301
 /horses      https://app.malbab.com/horses           301
 /glossary    https://app.malbab.com/glossary         301
+# [2026-10-28] 해외 G1 달력 — 쇼츠·블로그가 malbab.com/global-g1 을 쓸 수 있다(마케팅 세션 발견: 404)
+/global-g1    https://app.malbab.com/global-g1        301
+/global-g1/*  https://app.malbab.com/global-g1/:splat 301
