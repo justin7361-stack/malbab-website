@@ -34,6 +34,7 @@
 - [서비스 소개](https://app.malbab.com/about)
 - [FAQ · 한국 경마 입문](https://app.malbab.com/faq)
 - [용어 사전](https://app.malbab.com/glossary)
+- [데이터로 보는 경마 상식](https://app.malbab.com/guide) — 경마 용어는 KRA 공식 기록으로 센 실제 확률과 함께, 경마 규정(폐출혈 출전정지·마권 환불·주행심사·등급)은 한국마사회 공식 근거와 함께
 - [주간 예측결과 보고서](https://app.malbab.com/reports)
 - [이용약관](https://malbab.com/terms.html) · [개인정보처리방침](https://malbab.com/privacy.html)
 
@@ -182,7 +183,7 @@ AI 모델로 매 경주 1~3순위 + 복병 추출
 📲 앱 설치하기 →
 한국 경마인을 위한 모바일 전문 예상지.
 KRA 공식 데이터를 AI 가 매일 자동 정제해서 한 손에 모아 드립니다.
-출전표 · 혈통 · KSF 속도 지수 · AI 분석 · 100% 투명 적중률까지 — 한 화면에.
+출전표 · 혈통 · KSF 속도 지수 · AI 분석 · 경주마다 공개하는 AI 성적까지 — 한 화면에.
 서비스
 웹 서비스
 기수

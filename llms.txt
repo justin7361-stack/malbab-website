@@ -34,5 +34,6 @@
 - [서비스 소개](https://app.malbab.com/about)
 - [FAQ · 한국 경마 입문](https://app.malbab.com/faq)
 - [용어 사전](https://app.malbab.com/glossary)
+- [데이터로 보는 경마 상식](https://app.malbab.com/guide) — 경마 용어는 KRA 공식 기록으로 센 실제 확률과 함께, 경마 규정(폐출혈 출전정지·마권 환불·주행심사·등급)은 한국마사회 공식 근거와 함께
 - [주간 예측결과 보고서](https://app.malbab.com/reports)
 - [이용약관](https://malbab.com/terms.html) · [개인정보처리방침](https://malbab.com/privacy.html)
